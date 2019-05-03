@@ -6,9 +6,9 @@ Her vil du finde slides, links til opgaver, m.m. som løbende vil blive lagt op.
 # Praktisk information
 ## Tid og Sted
 Kurset finder sted de følgende søndage kl 11-16:
-* 12. maj
-* 19. maj
-* 26. maj
+* maj 12
+* maj 19
+* maj 26
 
 Det foregår på Syddansk Universitet, Campusvej 55, bygning 44, **lokale U167**. 
 
