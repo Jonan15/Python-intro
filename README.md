@@ -1,2 +1,4 @@
-# python-F19
-Arkiv og hjemmeside for Lær Python workshoppen på SDU, foråret 2019.
+# Lær Python
+Velkommen til Lær Python workshoppen på SDU, foråret 2019. 
+
+Her vil du finde slides, links til opgaver, m.m. som løbende vil blive lagt op.
