@@ -14,13 +14,14 @@ Det foregår på Syddansk Universitet, Campusvej 55, bygning 44, **lokale U167**
 
 Find nemt rundt på SDU ved at bruge [SDU Maps](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/563cba37423b7d0540c9adb7).
 
-## Bus
+## Transport
+### Bus
 Brug [Rejseplanen](https://www.rejseplanen.dk) for aktuel trafikinformation.
 
-## Cykel
+### Cykel
 Brug [Odense Rundt](https://odenserundt.dk/) til at finde en cykelrute, der tager højde for aktuelt vejarbejde.
 
-## Parkering
+### Parkering
 Hvis du kommer i bil bør du være opmærksom på [SDUs parkeringsregler](https://www.sdu.dk/da/service/vejviser/odense/p-regler_campusvej) for gæster.
 
 ## Frokost
@@ -28,7 +29,6 @@ SDUs kantiner er desværre ikke åbne om søndagen, og det vil derfor ikke være
 
 
 # Indhold
-
 Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne.
 
 | Dato    | Modul 1                   | Opgaver     | Modul 2                             | Opgaver     |
@@ -36,3 +36,11 @@ Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne
 | 12. maj | Intro, variabler og typer | Link kommer | If-sætninger og funktioner          | Link kommer |
 | 19. maj | Lister og løkker          | Link kommer | Strenge og dictionaries             | Link kommer |
 | 26. maj | Filer m.m.                | Link kommer | Repetition og avancerede udvidelser | Link kommer |
+
+# Forberedelse
+Det er vigtigt at du har en computer med til kurset, da en stor del af indholdet er programmeringsøvelser du sidder og laver undervejs. 
+
+Det er også vigtigt du har eller opretter en Google account, da vi bruger noget der hedder Colaboratory, som Google har udviklet.
+
+
+
