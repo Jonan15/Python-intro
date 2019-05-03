@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Lær Python</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="highlight/styles/default.css">
+	<script src="highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+
+	<div class="jumbotron text-center" style="margin-bottom:0">
+		<h1>Lær Python</h1>
+		<p>Kursus for gymnasieelever tilbudt af SDU</p>
+	</div>
+
+
+	<div class="container" style="margin-top:30px">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>Opgaver dag 4, modul 1</h2>
+
+				<h3>Opgave 1 - Pris-klasse</h3>
+				<p>Lav en klasse <code class="Python">Pris</code> der repræsenterer prisen på en vare. Klassens constructor skal tage to argumenter: <code class="Python">kroner</code> og <code class="Python">ører</code>. Det er op til dig at bestemme, hvordan beløbet gemmes i klassen (én eller to attributter).</p>
+				
+	
+				<h3>Opgave 2 - Print pris</h3>
+				<p>Lav en funktion <code class="Python">print_pris</code> der tager et <code class="Python">Pris</code>-objekt som argument og printer prisen således:</p>
+				<pre><code class="Python">12 kroner og 95 ører</code></pre>
+	
+
+				<h3>Opgave 3 - Vare-klasse</h3>
+				<p>Lav en ny klasse <code class="Python">Vare</code> der repræsenterer en vare i en butik. Klassen skal have to attributter: 
+					<ul>
+						<li><code class="Python">navn</code>: skal være en string.</li>
+						<li><code class="Python">pris</code>: skal være et <code class="Python">Pris</code>-objekt.</li>
+					</ul>
+
+
+				<h3>Opgave 4 - Print vare</h3>
+				<p>Lav en funktion <code class="Python">print_vare</code> der tager et <code class="Python">Vare</code>-objekt som argument og printer varens navn og pris således:</p>
+				<pre><code class="Python">Vare: mælk. Pris: 7 kroner og 95 ører</code></pre>
+
+				<h3>Opgave 5 - Sum af priser</h3>
+				<p>Lav en funktion <code class="Python">pris_sum</code> der tager to <code class="Python">Pris</code>-objekter og returnerer et nyt <code class="Python">Pris</code>-objekt med deres samlede pris.
+				<p>Husk at tage højde for der går 100 ører på en krone.</p>
+
+
+				<h3>Opgave 6 - Dyreste vare</h3>
+				<p>Lav en funktion <code class="Python">dyreste_vare</code> der tager to varer, og returnerer navnet på den dyreste vare.</p>
+
+
+				<h3>Opgave 7 - Dyreste vare pr gram</h3>
+				<p>Udvid <code class="Python">Vare</code>-klassen så den har en vægt. Brug denne til at lave en funktion <code class="Python">dyrest_pr_gram</code>, som tager to varer og returnerer den dyreste pr gram.</p>
+				<ul>
+					<li>Udvid programmet med en funktion som kan tage en liste af varer og returnere den dyreste pr gram</li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+
+
+	<br>
+	<div class="jumbotron text-center" style="margin-bottom:0">
+	</div>
+
+</body>
+
+</html>

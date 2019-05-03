@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Lær Python</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="highlight/styles/default.css">
+	<script src="highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+
+	<div class="jumbotron text-center" style="margin-bottom:0">
+		<h1>Lær Python</h1>
+		<p>Kursus for gymnasieelever tilbudt af SDU</p>
+	</div>
+
+
+	<div class="container" style="margin-top:30px">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>Opgaver dag 1, modul 1</h2>
+
+				<h3>Opgave 1 - Læs, forstå og test</h3>
+				<p>Antag vi har følgende program:</p>
+				<pre><code class="Python">x = 17
+y = 12.0
+z = "4"</code></pre>
+				<p>For hvert af følgende udtryk, skriv ned hvad du tror værdien og typen for udtrykket er.</p>
+				<p>Husk at <code class="Python">type(5) == int</code> og <code class="Python">type(5.0) == float</code></p>
+				<ul>
+					<li><code class="Python">2 * x</code></li>
+					<li><code class="Python">x / 2.0</code></li>
+					<li><code class="Python">x // 2.0</code></li>
+					<li><code class="Python">x + y</code></li>
+					<li><code class="Python">1 + 2 * 3</code></li>
+					<li><code class="Python">z * 4</code></li>
+				</ul>
+				<p>Check bagefter dine svar i Python.</p>
+				<h3>Opgave 2 - Læs, forstå og test</h3>
+				<p>For hvert af de følgende programmer, læs og forstå programmet. Prøv at regne ud hvad programmets output bliver. Prøv herefter at køre programmet og se om output svarer til dine forventninger.</p>
+				<pre><code class="Python">a = 5
+b = a * a
+b = b + 1
+a = 4
+print(b)</code></pre>
+				<pre><code class="Python">a = 1
+b = 1
+a = a + b
+b = a + b
+a = a * b
+b = a - b
+print(b)</code></pre>
+				<pre><code class="Python">a = "han "
+b = "det "
+c = "er "
+print(a + c + b + a + c)</code></pre>
+				<h3>Opgave 3 - Simple regneudtryk</h3>
+				<p>Følgende program tager som input to tal fra brugeren og udskriver dem:</p>
+				<pre><code class="Python">x = int(input("Skriv et tal: "))
+y = int(input("Skriv et tal: "))
+
+print("Første tal er", x)
+print("Andet tal er", y)</code></pre>
+				<p>Husk at <code class="Python">input</code>-funktionen returnerer en streng. Denne konverteres til et heltal med <code class="Python">int()</code>-funktionen.</p>
+				<ul>
+					<li>Læs, forstå og kør programmet</li>
+					<li>Udvid programmet så summen af de to tal udskrives</li>
+					<li>Udvid programmet så de to tal ganget sammen udskrives</li>
+				</ul>
+				<p>Skriv gerne en streng som også beskriver hvad der udskrives.</p>
+				
+				<h3>Opgave 4 - Hils</h3>
+				<p>Skriv et program hilser på brugeren. Dvs et program der beder brugeren om at først indtaste fornavn og derefter efternavn (to seperate input) og derefter udskriver en passende hilsen til brugeren. Dette kunne fx være en hilsen som:</p>
+				<pre><code class="Python">Hej Per, hyggeligt at møde dig.</code></pre>
+				<ul>
+					<li>Udvid programmet så brugeren skal indtaste ekstra information, fx. alder, arbejde, uddannelse osv.</li>
+				</ul>
+				<h3>Opgave 5 - Den irriterende ven</h3>
+				<p>Lav et program der, ligesom en irriterende ven, gentager hvad du siger. Dvs. tag et input fra brugeren og returner det samme input men gentaget et antal gange.</p>
+				<ul>
+					<li>Udvid programmet så antallet af gentagelser bestemmes af brugeren</li>
+					<li>Udvid programmet så antallet af gentagelser er tilfældigt. Brug her følgende til at generere et tilfældigt tal fx mellem 1 og 10:</li>
+					<pre><code class="Python">import random
+random.randint(1, 10)</code></pre>
+				</ul>
+				<h3>Opgave 6 - Fibbonacci</h3>
+				<p></p>
+				<pre><code class="Python">a = 1
+b = 1
+a = a + b
+b = a + b
+a = a + b
+b = a + b
+a = a + b
+b = a + b
+print(b)</code></pre>
+				<ul>
+					<li>Kan du tænke dig frem til hvad output af programmet bliver?
+					<li>Gem programmet og kør det. Passede dit svar?</li>
+					<li>Fibbonacci-tallene er givet ved 1, 1, 2, 3, 5, 8, 13, ... Hvert tal kan beregnes som summen af de to foregående.</li>
+					<li>Programmet udskriver Fibbonacci-tal nummer 8. Kan du se, hvad programmet har at gøre med Fibbonacci-tal?</li>
+					<li>Lav programmet om, så det i stedet udskriver Fibbonacci-tal nummer 10.</li>
+					<li>Lav programmet om, så det i stedet udskriver Fibbonacci-tal nummer 20.</li>
+					<li>Lav programmet om, så det i stedet udskriver Fibbonacci-tal nummer 50.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<br>
+	<div class="jumbotron text-center" style="margin-bottom:0">
+	</div>
+
+</body>
+
+</html>
