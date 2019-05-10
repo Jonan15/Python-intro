@@ -1,0 +1,884 @@
+\documentclass[main.tex]{subfiles}
+
+\title{Lær Python dag 2 - modul 2}
+\subtitle{Strenge, dictionaries}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Indhold}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Recap}
+\begin{frame}[fragile]{Hvad har I lært sidste modul?}
+	\begin{itemize}
+		\item Hvilke slags løkker findes der?
+		\item Hvad kan løkker bruges til?
+		\item Hvad er lister?
+		\item Hvad kan lister indeholde?
+		\item Hvordan kan man få indholdet ud af lister?
+		\item Hvilke liste operationer har I lært?
+	\end{itemize}
+\end{frame}
+
+\section{Strenge}
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	I har set tekststrenge mange gange allerede.
+	\begin{lstlisting}[style=python]
+name = str(input("Intast dit navn: "))
+print("Hej " + name + "!")
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Men strenge kan bruges til alt muligt, f.eks. til at repræsentere en DNA-sekvens eller en bog.
+	\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+book = "Once upon a time ..."
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	En streng er i virkeligheden bare en liste af enkelte tegn.
+	\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+	\end{lstlisting}
+	\begin{tabular}{|l|c|c|c|c|c|c|c|}
+		\hline
+		Tegn 	& A & T & T & A & G & C & C \\
+		\hline
+		Index 	& 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+		\hline
+	\end{tabular}
+\pause
+
+Så derfor kan vi bruge mange af de samme funktioner som vi lærte til lister!
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Indeksering
+	\begin{columns}
+		\column{0.4\textwidth}
+			\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+print(dna[1])
+			\end{lstlisting}
+			\pause
+			
+		\column{0.4\textwidth}
+			\begin{lstlisting}[style=python]
+T
+			\end{lstlisting}
+			
+	\end{columns}
+	
+	\pause
+	Slicing
+	\begin{columns}
+		\column{0.4\textwidth}
+			\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+print(dna[2:5])
+			\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+			\begin{lstlisting}[style=python]
+TAG
+			\end{lstlisting}
+	\end{columns}
+	\pause
+	Længde
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+print(len(dna))
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+7
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Gennemløb af liste (iterate)
+	\begin{columns}
+		\column{0.4\textwidth}
+			\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+for c in dna:
+	print(c)
+			\end{lstlisting}
+			
+		\pause
+		\column{0.4\textwidth}
+			\begin{lstlisting}[style=python]
+A
+T
+T
+A
+G
+C
+C
+			\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Lister er mutable, hvad med strenge?
+	\begin{columns}
+		\column{0.4\textwidth}
+			\begin{lstlisting}[style=python]
+mylist = [1, 2, 3, 4]
+mylist[0] = 5
+print(mylist)
+
+dna = "ATTAGCC"
+dna[0] = "G"
+print(dna)
+			\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+			\begin{lstlisting}[style=python]
+[5, 2, 3, 4]
+Traceback (most recent call last):
+	File "test.py", line 6, in <module>
+		dna[0] = "G"
+TypeError: 'str' object does not support item assignment
+			\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	En løsning på immutability er at bygge nye strenge
+		\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+newdna = "G" + dna[1:]
+print(newdna)
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+GTTAGCC
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Hvad med .append?
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+dna.append("A")
+print(dna)
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+Traceback (most recent call last):
+	File "test.py", line 2, in <module>
+		dna.append("A")
+AttributeError: 'str' object has no attribute 'append'
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Heldigvis ved vi at vi kan sætte sammen (konkatenere) med "+"
+		\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+dna = dna + "A"
+print(dna)
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+ATTAGCCA
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Der er også visse funktioner (metoder) som er lavet til strenge, f.eks. .lower() og .upper() som ændrer alle bogstaver til henholdsvis små og store.
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+print(dna.lower())
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+attagcc
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Hvis man er interesseret i at vide hvor i en streng et tegn forekommer, kan man bruge .find().
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+print(dna.find("G"))
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+4
+		\end{lstlisting}
+	\end{columns}
+	\pause
+	Hvad hvis der er flere af den samme, eller slet ikke nogen?
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+print(dna.find("A"))
+print(dna.find("B"))
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+0
+-1
+		\end{lstlisting}
+		Første forekomst og -1
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Kan man søge på mere end bare et enkelt tegn?
+	\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+print(dna.find("TAG"))
+	\end{lstlisting}
+		
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+2
+	\end{lstlisting}
+	Ja, svaret er index fra, hvor forekomsten starter.
+	\end{columns}	
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Hvis man er ligeglad med HVOR en forekomst er, men bare vil vide OM det forekommer kan man bruge "in".
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dna = "ATTAGCC"
+print("TAG" in dna)
+print("CAT" in dna)
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+True
+False
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Ofte har man brug for at ens streng er på en bestemt måde. Hvis man vil inddele en sætning i ord, kan man skære den i stykker og få alle stykkerne i en liste. Til det bruger man .split() funktionen. Man skal fortælle ved hvilket slags tegn man gerne vil skære (ofte mellemrum).
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+s = "Jeg gik mig over sø og land"
+l = s.split(" ")
+print(l)
+print(l[2])
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+['Jeg', 'gik', 'mig', 'over', 'sø', 'og', 'land']
+mig
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Det modsatte af at splitte er at sætte sammen, til det bruger man .join(). Den sætter en streng ind mellem alle elementerne i listen. Det bruges ofte til hurtigt at lave en liste af strenge til en enkelt streng, ved at joine med mellemrum.
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+l = ['Jeg', 'gik', 'mig', 'over', 'sø', 'og', 'land']
+s = "-".join(l)
+print(s)
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+Jeg-gik-mig-over-sø-og-land
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Måske er det vigtigste bare bogstaverne der er vigtige og alt andet forvirrer, så kan man fjerne det forvirrende med .replace(). Her skal man fortælle, hvad der skal ændres og hvad det skal ændres til.
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+s = "Jeg gik mig over sø og land"
+s2 = s.replace(" ", "")		# Erstatter mellemrum med ingenting = fjerner mellemrum
+print(s2)
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+Jeggikmigoversøogland
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Et eksempel på brug af nogle af de ting vi nu har lært kunne være en funktion som givet to ord (strenge), printer alle bogstaver der forekommer i begge ord.
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+		def in_both(word1, word2):
+		#code?
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge - en sekvens af tegn}
+	Et eksempel på brug af nogle af de ting vi nu har lært kunne være en funktion som givet to ord (strenge), printer alle bogstaver der forekommer i begge ord.
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+def in_both(word1, word2):
+    for letter in word1:
+        if letter in word2:
+            print(letter)
+            
+in_both("APPLE", "PEN")
+		\end{lstlisting}
+
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+P
+P
+E
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\section{Dictionaries}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Navnet dictionary kommer tydeligvis fra det engelske ord for ordbog, og grunden til det er at man bruger et ord til at slå op med (key) for at finde en bestemt værdi (value). 
+	
+	I de lister vi har set på bruges et bestemt tal (indeks) til at finde en bestemt værdi (value), dvs. værdierne har en bestemt rækkefølge.
+	
+	Dictionaries minder meget om, men vi ved ikke noget om rækkefølgen på samme måde, tilgengæld slipper vi for at holde styr på, hvilken placering en værdi har.
+	
+	I python er "\{\}" og ":" vigtige for at lave et dictionary.
+	\pause
+	
+	Her er et eksempel på en dansk--engelsk ordbog over nogle dyr.
+	\begin{lstlisting}[style=python]
+dyr = {"hund" : "dog", "kat" : "cat", "hest" : "horse"}
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Nu kan vi bruge vores dictionary til at slå oversættelserne op. Hvis man har et par "x" : "y", så bruger man den forreste streng, "x", som index for at finde "y".
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dyr = {"hund" : "dog", 
+        "kat" : "cat", 
+        "hest" : "horse"}
+print(dyr["hest"])
+		\end{lstlisting}
+	
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+horse
+		\end{lstlisting}
+	\end{columns}	
+\end{frame}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Vi kan nemt tilføje nye dyr til vores ordbog.
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dyr = {"hund" : "dog", 
+		"kat" : "cat", 
+		"hest" : "horse"}
+dyr["ged"] = "goat"
+dyr["gris"] = "pig"
+print(dyr["ged"])
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+goat
+		\end{lstlisting}
+	\end{columns}	
+\end{frame}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Vi kan også tjekke om en værdi findes i vores dictionary.
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dyr = {"hund" : "dog", 
+        "kat" : "cat", 
+        "hest" : "horse",
+        "ged" : "goat",
+        "gris" : "pig"}
+print("hamster" in dyr)
+print("hund" in dyr)
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+False
+True
+		\end{lstlisting}
+	\end{columns}	
+\end{frame}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Hvis vi skal løbe igennem alle ting i listen kan vi gøre det på flere forskellige måder.
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dyr = {"hund" : "dog", 
+        "kat" : "cat", 
+        "hest" : "horse"}
+for navn in dyr:
+	print("dansk: " + 
+	       navn + 
+	       ", engelsk: " + 
+	       dyr[navn])
+		\end{lstlisting}
+		
+		\pause
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+dansk: hund, engelsk: dog
+dansk: kat, engelsk: cat
+dansk: hest, engelsk: horse
+		\end{lstlisting}
+	\end{columns}	
+\end{frame}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	I stedet for at skulle "slå op" i vores ordbog i hvert gennemløb af loopet, kan vi få key - value parret direkte ved at bruge .items() på dictionariet.
+	\begin{columns}
+		\column{0.42\textwidth}
+		\begin{lstlisting}[style=python]
+dyr = {"hund" : "dog", 
+        "kat" : "cat", 
+        "hest" : "horse"}
+for key, val in dyr.items():
+    print("dansk: " + 
+           key + 
+           ", engelsk: " + 
+           val)
+		\end{lstlisting}
+		
+		\pause
+		\column{0.38\textwidth}
+		\begin{lstlisting}[style=python]
+dansk: hund, engelsk: dog
+dansk: kat, engelsk: cat
+dansk: hest, engelsk: horse
+		\end{lstlisting}
+	\end{columns}	
+\end{frame}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Dictionaries kan bruges til meget mere end som ordbog, og tingene behøver ikke være strenge, det kan være hvad som helst. Her er et eksempel på en repræsentation af en person.
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{lstlisting}[style=python]
+person = {"name" : "Bamse",
+          "age": 23,
+          "height": 187}
+
+if (person["height"] >= 182):
+	print("You are tall "
+	      + person["name"])
+else:
+	print("You can still grow "
+	      + person["name"])
+		\end{lstlisting}
+		
+		\pause
+		\column{0.3\textwidth}
+		\begin{lstlisting}[style=python]
+You are tall Bamse
+		\end{lstlisting}
+	\end{columns}	
+\end{frame}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Hvis vi tidligere ville have lavet et program der skulle tælle bogstaver i en lang streng, hvordan ville vi så have gjort?
+	\pause
+	
+	Her er et forslag:
+	\begin{lstlisting}[style=python]
+s = "Lorem ipsum dolor sit amet..."
+counts = [0] * 26	# [0,0,0,0,...]
+for c in s.lower():
+    if c == "a":
+        counts[0] = counts[0] + 1
+    elif c == "b":
+        counts[1] = counts[1] + 1
+    elif ...
+        .
+        .
+        .
+	\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Man kunne også gøre mange andre smartere ting end det, men det smarteste er nok at bruge dictionaries.
+	\pause
+	\begin{lstlisting}[style=python]
+s = "Lorem ipsum dolor sit amet..."
+d = {}
+for c in s:
+    if c not in d:
+        d[c] = 0
+    d[c] = d[c] + 1
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Strenge og Dictionaries - Sidste bemærkninger}
+	Som altid har vi kun vist jer et lillebitte udsnit af hvilke funktioner der findes til strenge, dictionaries, osv. Så husk, Google er kun få klik væk.
+\end{frame}
+
+
+%	\begin{lstlisting}[style=python]
+%dyr = {"hund" : "dog", "kat" : "cat", "hest" : "horse", 
+%"gris" : "pig", "ko" : "cow"}
+%\end{lstlisting}
+
+
+% \begin{frame}{Metropolis titleformats}
+%     \themename supports 4 different titleformats:
+%     \begin{itemize}
+%         \item Regular
+%         \item \textsc{Smallcaps}
+%         \item \textsc{allsmallcaps}
+%         \item ALLCAPS
+%     \end{itemize}
+%     They can either be set at once for every title type or individually.
+% \end{frame}
+
+% {
+%     \metroset{titleformat frame=smallcaps}
+% \begin{frame}{Small caps}
+%     This frame uses the \texttt{smallcaps} titleformat.
+
+%     \begin{alertblock}{Potential Problems}
+%         Be aware, that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in smallcaps will be typeset with the Computer Modern Serif font instead.
+%     \end{alertblock}
+% \end{frame}
+% }
+
+% {
+% \metroset{titleformat frame=allsmallcaps}
+% \begin{frame}{All small caps}
+%     This frame uses the \texttt{allsmallcaps} titleformat.
+
+%     \begin{alertblock}{Potential problems}
+%         As this titleformat also uses smallcaps you face the same problems as with the \texttt{smallcaps} titleformat. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
+
+%         As a rule of thumb: Just use it for plaintext-only titles.
+%     \end{alertblock}
+% \end{frame}
+% }
+
+% {
+% \metroset{titleformat frame=allcaps}
+% \begin{frame}{All caps}
+%     This frame uses the \texttt{allcaps} titleformat.
+
+%     \begin{alertblock}{Potential Problems}
+%         This titleformat is not as problematic as the \texttt{allsmallcaps} format, but basically suffers from the same deficiencies. So please have a look at the documentation if you want to use it.
+%     \end{alertblock}
+% \end{frame}
+% }
+
+% \section{Elements}
+
+% \begin{frame}[fragile]{Typography}
+%       \begin{verbatim}The theme provides sensible defaults to
+% \emph{emphasize} text, \alert{accent} parts
+% or show \textbf{bold} results.\end{verbatim}
+
+%   \begin{center}becomes\end{center}
+
+%   The theme provides sensible defaults to \emph{emphasize} text,
+%   \alert{accent} parts or show \textbf{bold} results.
+% \end{frame}
+
+% \begin{frame}{Font feature test}
+%   \begin{itemize}
+%     \item Regular
+%     \item \textit{Italic}
+%     \item \textsc{SmallCaps}
+%     \item \textbf{Bold}
+%     \item \textbf{\textit{Bold Italic}}
+%     \item \textbf{\textsc{Bold SmallCaps}}
+%     \item \texttt{Monospace}
+%     \item \texttt{\textit{Monospace Italic}}
+%     \item \texttt{\textbf{Monospace Bold}}
+%     \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
+%   \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Lists}
+%   \begin{columns}[T,onlytextwidth]
+%     \column{0.33\textwidth}
+%       Items
+%       \begin{itemize}
+%         \item Milk \item Eggs \item Potatos
+%       \end{itemize}
+%
+%     \column{0.33\textwidth}
+%       Enumerations
+%       \begin{enumerate}
+%         \item First, \item Second and \item Last.
+%       \end{enumerate}
+%
+%     \column{0.33\textwidth}
+%       Descriptions
+%       \begin{description}
+%         \item[PowerPoint] Meeh. \item[Beamer] Yeeeha.
+%       \end{description}
+%   \end{columns}
+% \end{frame}
+% \begin{frame}{Animation}
+%   \begin{itemize}[<+- | alert@+>]
+%     \item \alert<4>{This is\only<4>{ really} important}
+%     \item Now this
+%     \item And now this
+%   \end{itemize}
+% \end{frame}
+% \begin{frame}{Figures}
+%   \begin{figure}
+%     \newcounter{density}
+%     \setcounter{density}{20}
+%     \begin{tikzpicture}
+%       \def\couleur{alerted text.fg}
+%       \path[coordinate] (0,0)  coordinate(A)
+%                   ++( 90:5cm) coordinate(B)
+%                   ++(0:5cm) coordinate(C)
+%                   ++(-90:5cm) coordinate(D);
+%       \draw[fill=\couleur!\thedensity] (A) -- (B) -- (C) --(D) -- cycle;
+%       \foreach \x in {1,...,40}{%
+%           \pgfmathsetcounter{density}{\thedensity+20}
+%           \setcounter{density}{\thedensity}
+%           \path[coordinate] coordinate(X) at (A){};
+%           \path[coordinate] (A) -- (B) coordinate[pos=.10](A)
+%                               -- (C) coordinate[pos=.10](B)
+%                               -- (D) coordinate[pos=.10](C)
+%                               -- (X) coordinate[pos=.10](D);
+%           \draw[fill=\couleur!\thedensity] (A)--(B)--(C)-- (D) -- cycle;
+%       }
+%     \end{tikzpicture}
+%     \caption{Rotated square from
+%     \href{http://www.texample.net/tikz/examples/rotated-polygons/}{texample.net}.}
+%   \end{figure}
+% \end{frame}
+% \begin{frame}{Tables}
+%   \begin{table}
+%     \caption{Largest cities in the world (source: Wikipedia)}
+%     \begin{tabular}{lr}
+%       \toprule
+%       City & Population\\
+%       \midrule
+%       Mexico City & 20,116,842\\
+%       Shanghai & 19,210,000\\
+%       Peking & 15,796,450\\
+%       Istanbul & 14,160,467\\
+%       \bottomrule
+%     \end{tabular}
+%   \end{table}
+% \end{frame}
+% \begin{frame}{Blocks}
+%   Three different block environments are pre-defined and may be styled with an
+%   optional background color.
+
+%   \begin{columns}[T,onlytextwidth]
+%     \column{0.4\textwidth}
+%       \begin{block}{Default}
+%         Block content.
+%       \end{block}
+
+%       \begin{alertblock}{Alert}
+%         Block content.
+%       \end{alertblock}
+
+%       \begin{exampleblock}{Example}
+%         Block content.
+%       \end{exampleblock}
+
+%     \column{0.4\textwidth}
+
+%       \metroset{block=fill}
+
+%       \begin{block}{Default}
+%         Block content.
+%       \end{block}
+
+%       \begin{alertblock}{Alert}
+%         Block content.
+%       \end{alertblock}
+
+%       \begin{exampleblock}{Example}
+%         Block content.
+%       \end{exampleblock}
+
+%   \end{columns}
+% \end{frame}
+% \begin{frame}{Math}
+%   \begin{equation*}
+%     e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+%   \end{equation*}
+% \end{frame}
+% \begin{frame}{Line plots}
+%   \begin{figure}
+%     \begin{tikzpicture}
+%       \begin{axis}[
+%         mlineplot,
+%         width=0.9\textwidth,
+%         height=6cm,
+%       ]
+
+%         \addplot {sin(deg(x))};
+%         \addplot+[samples=100] {sin(deg(2*x))};
+
+%       \end{axis}
+%     \end{tikzpicture}
+%   \end{figure}
+% \end{frame}
+% \begin{frame}{Bar charts}
+%   \begin{figure}
+%     \begin{tikzpicture}
+%       \begin{axis}[
+%         mbarplot,
+%         xlabel={Foo},
+%         ylabel={Bar},
+%         width=0.9\textwidth,
+%         height=6cm,
+%       ]
+
+%       \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
+%       \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
+%       \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
+
+%       \legend{lorem, ipsum, dolor}
+
+%       \end{axis}
+%     \end{tikzpicture}
+%   \end{figure}
+% \end{frame}
+% \begin{frame}{Quotes}
+%   \begin{quote}
+%     Veni, Vidi, Vici
+%   \end{quote}
+% \end{frame}
+
+% {%
+% \setbeamertemplate{frame footer}{My custom footer}
+% \begin{frame}[fragile]{Frame footer}
+%     \themename defines a custom beamer template to add a text to the footer. It can be set via
+%     \begin{verbatim}\setbeamertemplate{frame footer}{My custom footer}\end{verbatim}
+% \end{frame}
+% }
+
+% \begin{frame}{References}
+%   Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
+% \end{frame}
+
+% \section{Conclusion}
+
+% \begin{frame}{Summary}
+
+%   Get the source of this theme and the demo presentation from
+
+%   \begin{center}\url{github.com/matze/mtheme}\end{center}
+
+%   The theme \emph{itself} is licensed under a
+%   \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
+%   Attribution-ShareAlike 4.0 International License}.
+
+%   \begin{center}\ccbysa\end{center}
+
+% \end{frame}
+
+% {\setbeamercolor{palette primary}{fg=black, bg=Orange}
+% \begin{frame}[standout]
+%   Questions?
+% \end{frame}
+% }
+
+% \appendix
+
+% \begin{frame}[fragile]{Backup slides}
+%   Sometimes, it is useful to add slides at the end of your presentation to
+%   refer to during audience questions.
+
+%   The best way to do this is to include the \verb|appendixnumberbeamer|
+%   package in your preamble and call \verb|\appendix| before your backup slides.
+
+%   \themename will automatically turn off slide numbering and progress bars for
+%   slides in the appendix.
+% \end{frame}
+
+% \begin{frame}[allowframebreaks]{References}
+
+%   \bibliography{demo}
+%   \bibliographystyle{abbrv}
+
+% \end{frame}
+
+\end{document}

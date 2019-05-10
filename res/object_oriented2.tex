@@ -1,0 +1,193 @@
+\input{main.tex}
+
+\title{Lær Python dag 4 - modul 2}
+\subtitle{Objektorienteret programmering}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Indhold}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Metoder}
+\begin{frame}[fragile]{Hvad er det nye?}
+Måske undrer I jer over, hvorfor man skulle bruge objekter, når man kunne gøre det samme med et dictionary:
+
+\begin{lstlisting}[style=python]
+def lav_tid(timer, minutter, sekunder):
+	return {"timer": timer, 
+			 "minutter": minutter, 
+			 "sekunder": sekunder}
+
+def print_tid(t):
+	print("%02d:%02d:%02d" % (t["timer"], t["minutter"], t["sekunder"]))
+	
+t = lav_tid(13,37,42)
+print_tid(t)
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Hvad er det nye?}
+Problemet er at vi næsten altid forventer en bestemt type som input til en funktion, og hvis ikke man giver den det rigtige:
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+print_tid("hej")
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+Traceback (most recent call last):
+	File "test.py", line 6, in <module>
+		print_tid("hej")
+	File "test.py", line 2, in print_tid
+		print("%02d:%02d:%02d" % (t["timer"], t["minutter"], t["sekunder"]))
+TypeError: string indices must be integers
+	\end{lstlisting}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Hvad er det nye?}
+Vi kan løse det med metoder. Metoder er funktioner der tilhører objekter. Metoder skrives som en del af en klassedefinition.
+\begin{lstlisting}[style=python]
+class Tid:
+    ...
+    	
+    def print_tid(self):
+	    print("%02d:%02d:%02d" % (self.timer, self.minutter, self.sekunder))
+\end{lstlisting}
+\pause
+Vi har flyttet \textit{ansvaret} for at printe, til objektet selv.
+
+\textbf{HUSK} metoder skal altid have \texttt{self} som første argument!
+
+Desuden må ens metode ikke hedde det samme som en attribut. (f.eks. "sekunder" i dette tilfælde)
+\end{frame}
+
+\begin{frame}[fragile]{Hvad er det nye?}
+Når man skal bruge metoden bruger man punktum.
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+...
+t = Tid(13,37,42)
+t.print_tid()
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+13:37:42
+	\end{lstlisting}
+\end{columns}
+\pause
+Som I kan se, kan man nu ikke komme til at kalde funktionen forkert.
+\end{frame}
+
+
+\begin{frame}[fragile]{Tiden går}
+Vi kan også ændre på et objekts værdier i en metode.
+	\begin{lstlisting}[style=python]
+class Tid:
+    ...
+    def vent(self, sekunder):
+        self.sekunder += sekunder
+        
+        self.minutter += sekunder // 60
+        self.sekunder = self.sekunder % 60
+        
+        self.timer += minutter // 60
+        self.minutter = self.minutter % 60
+        
+        self.timer = self.timer % 24
+	\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Tiden går}
+Nu kan vi se, hvordan tiden går:
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+...
+t = Tid(13,37,42)
+t.print_tid()
+t.vent(59)
+t.print_tid()
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+13:37:42
+13:38:41
+	\end{lstlisting}
+\end{columns}
+\end{frame}
+
+
+\section{Magic methods m.m.}
+\begin{frame}[fragile]{Specielle metoder}
+Vores tidligere metode \texttt{print\_tid} hjælper os med at printe tiden, men hvad nu hvis man gerne vil printe den sammen med noget andet?
+\begin{lstlisting}[style=python]
+Klokken er 13:37:42 lige nu.
+\end{lstlisting}
+\pause
+Og hvad sker der egentlig hvis vi printer tid, lige nu?
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+...
+t = Tid(13,37,42)
+print(t)
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+<__main__.Tid object at 0x02B11890>
+	\end{lstlisting}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Specielle metoder}
+Der findes en masse specielle metoder, nogle gange kaldet magic methods, som bliver kaldt på nogle bestemte tidspunkter og har nogle bestemte krav. Man kan kende dem på at de har to underscores både før og efter navnet, så I har allerede set én, \texttt{\_\_init\_\_}, som kaldes for en constructor funktion.
+
+En anden meget brugt af disse er \texttt{\_\_repr\_\_} som skal returnere en streng, og meningen er at det er sådan objektet repræsenteres som en streng.
+\begin{lstlisting}[style=python]
+class Tid
+	...
+	def __repr__(self):
+	    return "%02d:%02d:%02d" % (self.timer, self.minutter, self.sekunder)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Specielle metoder}
+Så nu behøver vi ikke \texttt{print\_tid} metoden længere, og vi har fået endnu mere fleksibilitet med.
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+...
+t = Tid(13,37,42)
+print(t)
+print("Klokken er " 
+      + str(t) 
+      + " lige nu.")
+	\end{lstlisting}
+	\pause
+	\column{0.42\textwidth}
+	\begin{lstlisting}[style=python]
+13:37:42
+Klokken er 13:37:42 lige nu.
+	\end{lstlisting}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Specielle metoder}
+Der findes rigtig mange flere, men dem må I selv læse mere om på nettet. Bare husk at de kan række dybt ind i pythons maskineri, så brug dem med omtanke.
+\end{frame}
+
+\end{document}

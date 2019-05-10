@@ -1,0 +1,175 @@
+\input{main.tex}
+
+\title{Lær Python dag 4 - modul 1}
+\subtitle{Objektorienteret programmering}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Indhold}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+
+\section{Objektorienteret programmering}
+\begin{frame}{Objektorienteret programmering}
+	\Large
+	"Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects", which may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods".\\
+	\large
+	- Wikipedia
+\end{frame}
+
+\begin{frame}{Objektorienteret programmering}
+	Objektorienteret programmering (OOP) baseres på koncepted om "objekter". Følgende beskriver et objekt:
+	\begin{itemize}
+		\item Indeholder værdier (attributes) og kode (methods).
+		\item Beskriver et koncept.
+		\item Har ansvar for egen kode.
+	\end{itemize}
+	Objektorienteret programmering er et programmeringsparadigme, altså en måde at programmere og strukturere sin kode på.
+\end{frame}
+
+\begin{frame}{Objekt og klasse}
+	Lidt to sidder af samme sag...\\
+	\bigskip
+	\textbf{Klasse}: En brugerdefineret prototype, som definerer et sæt attributter og methoder.\\
+	\bigskip
+	\textbf{Objekt}: En unik instans af en datastruktur defineret af dens klasse. Et objekt indeholder data.
+
+
+
+\end{frame}
+
+
+\begin{frame}{Eksempler på klasser}
+	\begin{itemize}
+		\item Køretøj: \\
+			attributes: antal hjul, længde, højde\\
+			methoder: dyt(), stop(), start()
+		\item Person: \\
+			attributes: navn, alder, forældre (Person)\\
+			methoder: hils(), skift\_navn(), løb()
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Har vi allerede brugt objekter?}
+	\pause
+	Vi har fx set et filobjekt:
+	\begin{lstlisting}[style=python]
+f = open("min_fil.txt", "w")
+f.write("Lær python!!!\n")
+f.write("IMADA SDU")
+f.close()
+	\end{lstlisting}
+	Her bruger vi metoderne \texttt{write()} og \texttt{close()} på vores filobjekt.\\
+\end{frame}
+
+
+\begin{frame}[fragile]{Har vi allerede brugt objekter?}
+		Filobjektet har også attributes fx:
+	\begin{itemize}
+		\item name: Navnet på filen (string)
+		\item closed: Er filen lukket eller ej (boolean)
+		\item mode: Hvordan er filen blivet åbnet (string)
+	\end{itemize}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{lstlisting}[style=python]
+f = open("min_fil.txt", "w")
+print(file.name)
+print(file.closed)
+print(file.mode)
+f.close()
+		\end{lstlisting}
+		\column{0.3\textwidth}
+		\begin{lstlisting}[style=python]
+min_fil.txt
+False
+w
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\section{Klasser og objekter i python}
+
+
+\begin{frame}[fragile]{Definition af klasse}
+	En klasse defineres på følgende vis:
+		\begin{lstlisting}[style=python]
+class Person:
+	def __init__(self, navn, alder):
+		self.navn = navn
+		self.alder = alder
+	\end{lstlisting}
+	\texttt{\_\_init\_\_} er en speciel methode som bliver kaldt når et nyt objekt skal laves. Denne methode skal have \emph{self} som første parameter. Dette er en reference til klassen selv og bruges til at få adgang til variabler for klassen.
+\end{frame}
+
+\begin{frame}[fragile]{Initialisering}
+	Et nyt objekt kan nu laves:
+		\begin{lstlisting}[style=python]
+person1 = Person("Jens", 24)
+person2 = Person("Peter", 23)
+	\end{lstlisting}
+	Og attributter kan tilgås vha. \texttt{.}-operatoren:
+	\begin{lstlisting}[style=python]
+print("person1: ", person1.navn, person1.alder)
+print("person2: ", person2.navn, person2.alder)
+	\end{lstlisting}
+	Output:
+	\begin{lstlisting}[style=python]
+person1:  Jens 24
+person2:  Peter 23
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Hvor kan de bruges?}
+	Objekter kan bruges alle steder hvor en normal primitiv type kan bruges, dvs. vi kan fx bruge det til følgende:
+	\begin{itemize}
+		\item Som et parameter til en funktion.
+		\item Som en attribut i et andet objekt.
+		\item Som returtype fra en funktion.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Eksempel}
+	Lad os lave en klasse som gemmer et klokkeslæt:
+		\begin{lstlisting}[style=python]
+class Tid:
+	def __init__(self, timer, minutter, sekunder):
+		self.timer = timer
+		self.minutter = minutter
+		self.sekunder = sekunder
+	\end{lstlisting}
+	\pause
+	Vi kan lave en funktion som printer tiden:
+	\begin{lstlisting}[style=python]
+def print_tid(t):
+	print("%02d:%02d:%02d" % (t.timer, t.minutter, t.sekunder))
+	\end{lstlisting}
+	\pause
+	Lad os teste det:
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+min_tid = Tid(2, 3, 23)
+print_tid(min_tid)
+		\end{lstlisting}
+		\column{0.4\textwidth}
+		\begin{lstlisting}[style=python]
+02:03:23
+		\end{lstlisting}
+	\end{columns}
+\end{frame}
+
+\section{Metoder}
+
+
+\section{Nedarvning}
+
+
+
+
+\end{document}
