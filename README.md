@@ -10,9 +10,9 @@ Kurset finder sted de følgende søndage kl 11-16:
 * maj 19
 * maj 26
 
-Det foregår på Syddansk Universitet, Campusvej 55, bygning 44, **lokale U167**. 
+Det foregår på Syddansk Universitet, Campusvej 55, bygning 44, **lokale U170** (ændret 10. maj). 
 
-Find nemt rundt på SDU ved at bruge [SDU Maps](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/563cba37423b7d0540c9adb7).
+Find nemt rundt på SDU ved at bruge [SDU Maps](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/563cba39423b7d0540c9adc3).
 
 ## Transport
 ### Bus
