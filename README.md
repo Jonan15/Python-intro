@@ -31,11 +31,11 @@ SDUs kantiner er desværre ikke åbne om søndagen, og det vil derfor ikke være
 # Indhold
 Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne.
 
-| Dato    | Modul 1                   | Opgaver     | Modul 2                             | Opgaver     |
-| :---    | :---                      | :---        | :---                                | :---        |
-| 12. maj | Intro, variabler og typer | [Link](https://colab.research.google.com/drive/1RAvCqGnrOlEWUWDwhPXi4UfUEk-baZZR) | If-sætninger og funktioner          | Link kommer |
-| 19. maj | Lister og løkker          | Link kommer | Strenge og dictionaries             | Link kommer |
-| 26. maj | Filer m.m.                | Link kommer | Repetition og avancerede udvidelser | Link kommer |
+| Dato    | Modul 1                                                      | Opgaver                                                                           | Modul 2                             | Opgaver     |
+| :---    | :---                                                         | :---                                                                              | :---                                | :---        |
+| 12. maj | [Intro, variabler og typer](intro_variable_typer_udtryk.pdf) | [Link](https://colab.research.google.com/drive/1RAvCqGnrOlEWUWDwhPXi4UfUEk-baZZR) | If-sætninger og funktioner          | Link kommer |
+| 19. maj | Lister og løkker                                             | Link kommer                                                                       | Strenge og dictionaries             | Link kommer |
+| 26. maj | Filer m.m.                                                   | Link kommer                                                                       | Repetition og avancerede udvidelser | Link kommer |
 
 # Forberedelse
 Det er vigtigt at du har en computer med til kurset, da en stor del af indholdet er programmeringsøvelser du sidder og laver undervejs. 
