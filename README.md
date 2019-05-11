@@ -33,7 +33,7 @@ Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne
 
 | Dato    | Modul 1                   | Opgaver     | Modul 2                             | Opgaver     |
 | :---    | :---                      | :---        | :---                                | :---        |
-| 12. maj | Intro, variabler og typer | Link kommer | If-sætninger og funktioner          | Link kommer |
+| 12. maj | Intro, variabler og typer | [Link](https://colab.research.google.com/drive/1RAvCqGnrOlEWUWDwhPXi4UfUEk-baZZR) | If-sætninger og funktioner          | Link kommer |
 | 19. maj | Lister og løkker          | Link kommer | Strenge og dictionaries             | Link kommer |
 | 26. maj | Filer m.m.                | Link kommer | Repetition og avancerede udvidelser | Link kommer |
 
