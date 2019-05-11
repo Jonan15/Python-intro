@@ -557,10 +557,56 @@ Eksempel 1:
 \begin{lstlisting}[style=python]
 navn = input("Hvad er dit navn?")
 \end{lstlisting}
-Eksempel 2:
-\begin{lstlisting}[style=python]
-alder = input("Hvad er din alder?")
-\end{lstlisting}
+\pause
+Eksempel 2:	
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+alder = input("Alder?")
+print("Din alder om to år er")
+print(alder+2)
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+...
+TypeError: must be str, not int
+	\end{lstlisting}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Input fra brugeren}
+Vi bliver nødt til at lave teksten om:
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{lstlisting}[style=python]
+	alder = input("Alder?")
+	print("Din alder om to år er")
+	print(int(alder)+2)
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+Alder?24
+26
+	\end{lstlisting}
+\end{columns}
+\pause
+Eller:
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{lstlisting}[style=python]
+alder = int(input("Alder?"))
+print("Din alder om to år er")
+print(alder+2)
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+Alder?24
+26
+	\end{lstlisting}
+\end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Kommentarer}
@@ -585,20 +631,41 @@ Fx kan vi benytte \texttt{math}-biblioteket til at lave klassiske matematiske op
 Program:
 \begin{lstlisting}[style=python]
 import math
-x = 64
+x = 25
 y = math.sqrt(x)
 print(y)
 \end{lstlisting}
 \column{0.4\textwidth}
 Output:
 \begin{lstlisting}[style=python]
-8
+5.0
 \end{lstlisting}
 \end{columns}
 
 
 Se dokumentation for alle matematikfunktioner:
 \url{https://docs.python.org/3/library/math.html}
+\end{frame}
+
+\begin{frame}{Recap}
+Vi har nu snuset til alle disse ting:
+\begin{itemize}
+\item Print
+\pause
+\item Typer, hvilke?
+\pause
+\item Værdier og operatorer
+\pause
+\item Variabler
+\pause
+\item Input
+\pause
+\item Kommentarer
+\pause
+\item Moduler
+\end{itemize}
+\pause
+Og nu skal I (endelig) til at lave øvelser!
 \end{frame}
 
 \end{document}
