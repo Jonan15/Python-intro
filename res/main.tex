@@ -1,0 +1,100 @@
+\documentclass{beamer}
+
+\usepackage{default}
+
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+% \usepackage{pgfplots}
+% \usepgfplotslibrary{dateplot}
+
+%\usepackage{currfile-abspath}
+%\getpwd
+
+\usepackage{graphicx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Change path if it is not right anymore %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{/home/bamse/python-F19/res/figs/}}
+
+\definecolor{Orange}{RGB}{229,134,25}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\usepackage{listings}
+
+
+\definecolor{background}{RGB}{226, 226, 226}
+
+
+\lstset{ 
+	literate=% 
+	{Ö}{{\"O}}1 
+	{Ä}{{\"A}}1 
+	{Ü}{{\"U}}1 
+	{ß}{{\ss}}{ 1\negmedspace\,} 
+	{ü}{{\"u}}1 
+	{ä}{{\"a}}1 
+	{ö}{{\"o}}1 
+	{ø}{{\o}}{1\negmedspace\,} 
+	{Ø}{{\O}}{1\negthinspace\,\,} 
+	{å}{{\aa}}{1\negthickspace\,} 
+	{Å}{{\AA}}{1\negthinspace\,} 
+	{æ}{{\ae}}{1\negthinspace\,} 
+	{Æ}{{\AE}}{1\,\,}}
+
+\lstdefinestyle{terminal}{
+	language=bash,
+	aboveskip=2mm,
+	belowskip=2mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\footnotesize,
+	commentstyle=\color{black},
+	frame=single,
+	framesep=2pt,
+	breaklines=true,
+	breakatwhitespace=false,
+	backgroundcolor = \color{background},
+	tabsize=2
+}
+
+
+\lstdefinestyle{python}{
+	language=Python,
+	aboveskip=2mm,
+	belowskip=1mm,
+	showstringspaces=false,
+	columns=flexible,
+	numbers=none,
+	numberstyle=\footnotesize,
+	commentstyle=\ttfamily\color{black},
+	frame=single,
+	framesep=2pt,
+	breaklines=true,
+	breakatwhitespace=false,
+	backgroundcolor = \color{background},
+	tabsize=2
+}
+
+\setbeamertemplate{footline}[text line]{%
+	\parbox{\linewidth}{\vspace*{-3pt}IMADA - SDU\hfill}
+}
+
+
+\title{Lær Python dag 1 - modul 1}
+\subtitle{Introduktion, basis python}
+% \date{\today}
+\date{}
+\author[JBA]{Jonas Bamse Andersen}
+\institute{Institut for Matematik og Datalogi - IMADA \\
+	Syddansk Universitet}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.png}}
