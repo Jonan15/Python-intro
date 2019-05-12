@@ -1,5 +1,5 @@
 # Lær Python
-Velkommen til Lær Python workshoppen på SDU, foråret 2019. 
+Velkommen til Lær Python workshoppen på SDU, foråret 2019, arrangeret af Institut for Matematik og Datalogi - IMADA. 
 
 Her vil du finde slides, links til opgaver, m.m. som løbende vil blive lagt op.
 
@@ -37,10 +37,36 @@ Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne
 | 19. maj | Lister og løkker                                             | Link kommer                                                                       | Strenge og dictionaries                                  | Link kommer                                                                       |
 | 26. maj | Filer m.m.                                                   | Link kommer                                                                       | Repetition og avancerede udvidelser                      | Link kommer                                                                       |
 
+## Ekstra udfordringer øvelser
+Hvis man løber tør for opgaver her, så frygt ej! Det sjoveste er nok hvis man finder et lille projekt (spil eller andet simpelt program), da man ofte har en større motivation til sine egne projekter. Hvis man ikke lige har en idé (det er helt normalt) så findes der et utal af programmeringsøvelser på nettet. Jeg anbefaler:
+
+* [Project Euler](https://projecteuler.net/) er mere matematiske af natur, så for at løse nogle af deres problemer skal man søge sig frem til ny spændende matematik.
+* [Practice Python](https://www.practicepython.org/) har nogle mere praktiske projekt-lignende opgaver.
+* Søg selv flere.
+
 # Forberedelse
 Det er vigtigt at du har en computer med til kurset, da en stor del af indholdet er programmeringsøvelser du sidder og laver undervejs. 
 
 Det er også vigtigt du har eller opretter en Google account, da vi bruger noget der hedder Colaboratory, som Google har udviklet.
 
 
+# Litteratur
+Slides tilgængelige her fra siden burde som udgangspunkt være nok til at løse opgaverne. Slides er til en vis grad baseret på bogen "Think Python 2e", se nedenfor.
 
+Oplever man problemer, er det godt at lære sig at søge information på internettet. Stack Overflow har svar på de fleste programmeringsspørgsmål.
+
+Hvis man helst vil læse ting i en bog, så anbefaler jeg: [Think Python 2nd Edition by Allen B. Downey](https://greenteapress.com/wp/think-python-2e/), som er frit tilgængeligt både til læsning i browser eller download til pdf.
+
+Andre brugbare links:
+* [Den officielle Python dokumentation](https://docs.python.org/3/library/index.html) kan måske være lidt tung at læse i, men bliver ofte henvist til/citeret i svar på førnævnte Stack Overflow.
+* [Codecademy](https://www.codecademy.com/learn/learn-python) har en gratis tutorial i Python. OBS: Det er til Python 2, til forskel fra Python 3 som der bliver undervist her, forskellen er ikke stor men kan give lidt forvirring.
+* [Tutorialspoint](https://www.tutorialspoint.com/python) har en gratis tutorial i Python 3. Den inkluderer trin til installation af Python på egen PC.
+
+# Kontakt
+![Jonas Bamse Andersen](res/figs/bamse.jpg)
+
+Jonas Bamse Andersen
+
+jonan15@student.sdu.dk
+
+24 26 11 23
