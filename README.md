@@ -37,7 +37,7 @@ Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne
 | 19. maj | Lister og løkker                                             | Link kommer                                                                       | Strenge og dictionaries                                  | Link kommer                                                                       |
 | 26. maj | Filer m.m.                                                   | Link kommer                                                                       | Repetition og avancerede udvidelser                      | Link kommer                                                                       |
 
-## Ekstra udfordringer øvelser
+### Ekstra udfordringer/øvelser
 Hvis man løber tør for opgaver her, så frygt ej! Det sjoveste er nok hvis man finder et lille projekt (spil eller andet simpelt program), da man ofte har en større motivation til sine egne projekter. Hvis man ikke lige har en idé (det er helt normalt) så findes der et utal af programmeringsøvelser på nettet. Jeg anbefaler:
 
 * [Project Euler](https://projecteuler.net/) er mere matematiske af natur, så for at løse nogle af deres problemer skal man søge sig frem til ny spændende matematik.
@@ -59,7 +59,7 @@ Hvis man helst vil læse ting i en bog, så anbefaler jeg: [Think Python 2nd Edi
 
 Andre brugbare links:
 * [Den officielle Python dokumentation](https://docs.python.org/3/library/index.html) kan måske være lidt tung at læse i, men bliver ofte henvist til/citeret i svar på førnævnte Stack Overflow.
-* [Codecademy](https://www.codecademy.com/learn/learn-python) har en gratis tutorial i Python. OBS: Det er til Python 2, til forskel fra Python 3 som der bliver undervist her, forskellen er ikke stor men kan give lidt forvirring.
+* [Codecademy](https://www.codecademy.com/learn/learn-python) har en gratis tutorial i Python. OBS: Det er til Python 2, til forskel fra Python 3 som der bliver undervist her på kurset, forskellen er ikke stor men kan give lidt forvirring.
 * [Tutorialspoint](https://www.tutorialspoint.com/python) har en gratis tutorial i Python 3. Den inkluderer trin til installation af Python på egen PC.
 
 # Kontakt
