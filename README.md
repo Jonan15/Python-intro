@@ -63,7 +63,7 @@ Andre brugbare links:
 * [Tutorialspoint](https://www.tutorialspoint.com/python) har en gratis tutorial i Python 3. Den inkluderer trin til installation af Python på egen PC.
 
 # Kontakt
-<img src="res/figs/bamse.jpg" width=50>
+<img src="res/figs/bamse.jpg" width="100">
 
 Jonas Bamse Andersen
 
