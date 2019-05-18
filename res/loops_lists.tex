@@ -338,6 +338,27 @@ print(mylist[2])
 
 \end{frame}
 
+
+\begin{frame}[fragile]{Indeksering i lister}
+Vi kan indeksere med alle slags værdier:
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+mylist = [4, 0, 3, 8]
+x = 1
+print(mylist[x])
+print(mylist[len(mylist)-1])
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+0
+8
+	\end{lstlisting}
+\end{columns}
+
+\end{frame}
+
 \begin{frame}[fragile]{Slicing}
 	Vi kan tage en del af en liste ved hjælp af slicing:
 	\begin{columns}
@@ -478,6 +499,9 @@ print(mylist2)
 [1, 2, 1, 2, 1, 2]
 		\end{lstlisting}
 	\end{columns}
+\pause
+Hmm, minder det os om noget?...
+
 	\pause
 	Tjek om element i en liste:
 	\begin{columns}
@@ -510,6 +534,7 @@ else:
 	\end{lstlisting}
 \end{frame}
 
+
 \begin{frame}[fragile]{Range}
 Det kan være brugbart at tænke på \texttt{range} således:
 
@@ -521,11 +546,11 @@ range(5) == [0, 1, 2, 3, 4]
 \pause
 Når man kigger på 
 
-	\begin{columns}
+\begin{columns}
 	\column{0.4\textwidth}
 	\begin{lstlisting}[style=python]
 for i in range(5):
-  print(i)
+print(i)
 	\end{lstlisting}
 	\column{0.4\textwidth}
 	\begin{lstlisting}[style=python]
@@ -536,8 +561,27 @@ for i in range(5):
 4
 	\end{lstlisting}
 \end{columns}
-
 \end{frame}
+
+
+\begin{frame}[fragile]{Lidt af det hele}
+Hvis man har brug for indekset af et element gør man ofte således:
+\begin{lstlisting}[style=python]
+mylist = [4, 0, 3, 8]
+for i in range(len(mylist)):
+  print("På plads " + str(i) + " er der " + str(mylist[i]))
+\end{lstlisting}
+\pause
+
+Output:
+\begin{lstlisting}[style=python]
+På plads 0 er der 4
+På plads 1 er der 0
+På plads 2 er der 3
+På plads 3 er der 8
+\end{lstlisting}
+\end{frame}
+
 
 \begin{frame}{Want more?}
 	Flere metoder og eksempler kan findes her:\\
