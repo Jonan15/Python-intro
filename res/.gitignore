@@ -5,4 +5,5 @@
 !*.zip
 !*.jpg
 !*.png
+!*.json
 !figs/
