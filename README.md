@@ -29,13 +29,13 @@ SDUs kantiner er desværre ikke åbne om søndagen, og det vil derfor ikke være
 
 
 # Indhold
-Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne.
+Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne. (Ændret 26. maj)
 
 | Dato    | Modul 1                                                      | Opgaver                                                                           | Modul 2                                                  | Opgaver                                                                           |
 | :---    | :---                                                         | :---                                                                              | :---                                                     | :---                                                                              |
 | 12. maj | [Intro, variabler og typer](intro_variable_typer_udtryk.pdf) | [Link](https://colab.research.google.com/drive/1RAvCqGnrOlEWUWDwhPXi4UfUEk-baZZR) | [If-sætninger og funktioner](conditionals_functions.pdf) | [Link](https://colab.research.google.com/drive/1IVVajg37bqMZ03nrdUhN9qPvlhRl57A2) |
-| 19. maj | [Lister og løkker](loops_lists.pdf)                          | [Link](https://colab.research.google.com/drive/1FLBIqR8Vw0q3zj8DdI88mTO340-ESp9a) | [Strenge og dictionaries](strings_dictionaries.pdf)      | [Link](https://colab.research.google.com/drive/1f0u_rKyn2DANGFheKga8zzxRf1linZZS) |
-| 26. maj | Filer m.m.                                                   | Link kommer                                                                       | Repetition og avancerede udvidelser                      | Link kommer                                                                       |
+| 19. maj | [Lister og løkker](loops_lists.pdf)                          | [Link](https://colab.research.google.com/drive/1FLBIqR8Vw0q3zj8DdI88mTO340-ESp9a) | [Strenge](strings.pdf)                                   | [Link](https://colab.research.google.com/drive/1f0u_rKyn2DANGFheKga8zzxRf1linZZS) |
+| 26. maj | [Dictionaries og filer](dictionaries_files.pdf)              | [Link](https://colab.research.google.com/drive/1CP12uj6KJmJadUiAMLXx8CIzR7bz6cB1) | Information om Datalogi                                  | -                                                                                 |
 
 
 ### Ekstra udfordringer/øvelser
