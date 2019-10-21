@@ -1,41 +1,37 @@
 # Lær Python
-Velkommen til Lær Python workshoppen på SDU, foråret 2019, arrangeret af Institut for Matematik og Datalogi - IMADA. 
+Velkommen! 
+Dette er mit hjemsted for materialer jeg bruger til Python intro workshops.
 
-Her vil du finde slides, links til opgaver, m.m. som løbende vil blive lagt op.
+Der vil være slides, links til opgaver, osv. Når jeg er igang med en workshop kan nogle links være inaktive, og ting kan ændre sig løbende.
+
+# Forberedelse
+Det er vigtigt at du har en computer med til kurset, da en stor del af indholdet er programmeringsøvelser du sidder og laver undervejs. 
+
+Til kurset bliver der anvendt noget der hedder [Colaboratory](https://colab.research.google.com/), som man kan bruge, hvis man har/opretter en Google konto (gmail).
+Hvis ikke man ønsker at bruge/oprette en Google konto, skal man installere [Python 3](https://www.python.org/downloads/) (hvis man ikke allerede har det) og et program til at skrive kode i (på engelsk: editor) f.eks. [Atom](https://atom.io/).
+
+Forsøg at få en af delene til at virke inden vi mødes første gang, men brug ikke for meget tid på det, hvis noget driller.
 
 # Praktisk information
 ## Tid og Sted
-Kurset finder sted de følgende søndage kl 11-16:
-* maj 12
-* maj 19
-* maj 26
+Kurset finder sted de følgende tirsdage kl 12-16:
+* Oktober 29
+* November 12 (Ellehammer)
+* November 26
+* December 10
 
-Det foregår på Syddansk Universitet, Campusvej 55, bygning 44, **lokale U170** (ændret 10. maj). 
-
-Find nemt rundt på SDU ved at bruge [SDU Maps](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/563cba39423b7d0540c9adc3).
-
-## Transport
-### Bus
-Brug [Rejseplanen](https://www.rejseplanen.dk) for aktuel trafikinformation.
-
-### Cykel
-Brug [Odense Rundt](https://odenserundt.dk/) til at finde en cykelrute, der tager højde for aktuelt vejarbejde.
-
-### Parkering
-Hvis du kommer i bil bør du være opmærksom på [SDUs parkeringsregler](https://www.sdu.dk/da/service/vejviser/odense/p-regler_campusvej) for gæster.
-
-## Frokost
-SDUs kantiner er desværre ikke åbne om søndagen, og det vil derfor ikke være muligt at købe frokost. Du bør derfor **medbringe din egen frokost** hjemmefra.
+Det foregår i Cortex Lab, lokale 2.0.08, undtagen d. 12. november, hvor det er i TEK's lokale Ellehammer.
 
 
 # Indhold
 Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne. (Ændret 26. maj)
 
-| Dato    | Modul 1                                                      | Opgaver                                                                           | Modul 2                                                  | Opgaver                                                                           |
-| :---    | :---                                                         | :---                                                                              | :---                                                     | :---                                                                              |
-| 12. maj | [Intro, variabler og typer](intro_variable_typer_udtryk.pdf) | [Link](https://colab.research.google.com/drive/1RAvCqGnrOlEWUWDwhPXi4UfUEk-baZZR) | [If-sætninger og funktioner](conditionals_functions.pdf) | [Link](https://colab.research.google.com/drive/1IVVajg37bqMZ03nrdUhN9qPvlhRl57A2) |
-| 19. maj | [Lister og løkker](loops_lists.pdf)                          | [Link](https://colab.research.google.com/drive/1FLBIqR8Vw0q3zj8DdI88mTO340-ESp9a) | [Strenge](strings.pdf)                                   | [Link](https://colab.research.google.com/drive/1f0u_rKyn2DANGFheKga8zzxRf1linZZS) |
-| 26. maj | [Dictionaries og filer](dictionaries_files.pdf)              | [Link](https://colab.research.google.com/drive/1CP12uj6KJmJadUiAMLXx8CIzR7bz6cB1) | Information om Datalogi                                  | -                                                                                 |
+| Dato     | Modul 1                   | Opgaver     | Modul 2                    | Opgaver     |
+| :---     | :---                      | :---        | :---                       | :---        |
+| 29. okt. | Intro, variabler og typer | Link kommer | If-sætninger og funktioner | Link kommer |
+| 12. nov. | Lister og løkker          | Link kommer | Strenge                    | Link kommer |
+| 26. nov. | Dictionaries              | Link kommer | Filer                      | Link kommer |
+| 10. dec. | Klasser og objekter       | Link kommer | (Buffer)                   | Link kommer |
 
 
 ### Ekstra udfordringer/øvelser
@@ -44,11 +40,6 @@ Hvis man løber tør for opgaver her, så frygt ej! Det sjoveste er nok hvis man
 * [Project Euler](https://projecteuler.net/) er mere matematiske af natur, så for at løse nogle af deres problemer skal man søge sig frem til ny spændende matematik.
 * [Practice Python](https://www.practicepython.org/) har nogle mere praktiske projekt-lignende opgaver.
 * Søg selv flere.
-
-# Forberedelse
-Det er vigtigt at du har en computer med til kurset, da en stor del af indholdet er programmeringsøvelser du sidder og laver undervejs. 
-
-Det er også vigtigt du har eller opretter en Google account, da vi bruger noget der hedder Colaboratory, som Google har udviklet.
 
 
 # Litteratur
