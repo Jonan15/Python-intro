@@ -1,0 +1,484 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+
+\definecolor{Orange}{RGB}{229,134,25}
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\usepackage{listings}
+
+\definecolor{background}{RGB}{226, 226, 226}
+
+\lstset{ 
+literate=% 
+{Ö}{{\"O}}1 
+{Ä}{{\"A}}1 
+{Ü}{{\"U}}1 
+{ß}{{\ss}}{ 1\negmedspace\,} 
+{ü}{{\"u}}1 
+{ä}{{\"a}}1 
+{ö}{{\"o}}1 
+{ø}{{\o}}{1\negmedspace\,} 
+{Ø}{{\O}}{1\negthinspace\,\,} 
+{å}{{\aa}}{1\negthickspace\,} 
+{Å}{{\AA}}{1\negthinspace\;} 
+{æ}{{\ae}}{1\negthinspace\;} 
+{Æ}{{\AE}}{1\,\,}}
+
+\lstdefinestyle{terminal}{
+	language=bash,
+	aboveskip=2mm,
+	belowskip=2mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\footnotesize,
+	commentstyle=\color{black},
+	frame=single,
+	framesep=2pt,
+	breaklines=true,
+	breakatwhitespace=false,
+	backgroundcolor = \color{background},
+	tabsize=2
+}
+
+
+\lstdefinestyle{python}{
+	language=Python,
+	aboveskip=2mm,
+	belowskip=1mm,
+	showstringspaces=false,
+	columns=flexible,
+	numbers=none,
+	numberstyle=\footnotesize,
+	commentstyle=\ttfamily\color{black},
+	frame=single,
+	framesep=2pt,
+	breaklines=true,
+	breakatwhitespace=false,
+	backgroundcolor = \color{background},
+	tabsize=2
+}
+
+
+
+\title{Introduktion til Programmering i Python}
+\subtitle{Studiepraktik 2019}
+\date{}
+\author{Jonas Bamse Andersen}
+\institute{Syddansk Universitet}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Indhold}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Programmering generelt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Programmering}
+Få en computer til at udføre ønskede handlinger.
+
+\medskip
+
+Computer = desktop, laptop, smartphone, vaskemaskine-controller$\dots$
+
+\medskip
+
+Handlinger: Databehandling og interaktion med hardware.
+
+\medskip
+
+Eksempler:
+
+\begin{itemize}
+ \item Tekstbehandling
+ \item WWW
+ \item Databaser
+ \item Computerspil
+ \item Styring af andre maskiner (industrimaskiner, måneraketter, $\dots$).
+ \item Regneopgaver, videnskabelige udregninger
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Programmeringssprog}
+\begin{center}
+	\begin{tabular}{c|c}
+		\textbf{Mennesker}						& 				\textbf{Computere}			\\\hline
+		Uformel beskrivelse 					& 				Entydige kommandoer			\\
+		Naturlige sprog 						& 				Fast format
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{c|c}
+		\textbf{Højniveausprog}												& 			\textbf{Maskinkode}				\\\hline
+		\texttt{if}$\dots$ \texttt{then}$\dots$ \texttt{else}$\dots$		&			01110111 						\\
+		Tæt på engelsk(?) 													& 			Binære koder					\\
+		Bedre overblik 														& 			Dårligt overblik				\\
+		Sværere at lave fejl 												& 			Nemt at lave fejl				\\
+		Hurtig programmering 												& 			Langsom programmering			\\
+	\end{tabular}
+\end{center}
+
+\bigskip
+Oversætter-program: Højniveau sprog $\rightarrow$ maskinkode.
+\end{frame}
+
+\begin{frame}{Problemløsning}
+I alle programmeringssprog foregår problemløsning/programmering således:
+
+\begin{enumerate}
+	\item Inddel problemet i mindre/simplere del-problemer.
+	
+	\item Inddel de mindre del-problemer i endnu mindre del-problemer.
+	
+	\item ... 
+	
+	\item Indtil du kan løse del-problemerne "nemt".
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Programmeringssprog}
+
+De fleste programmeringssprog er af den ``imperative'' type, dvs. er baseret på dataceller (kasser) hvis indhold kan ændres undervejs.
+
+\medskip
+Eksempler:
+
+\alert{Java, C, C++, C\#, Pascal, Delphi, Basic, Fortran, Cobol, Ada, Perl,
+Python, Ruby, $\dots$
+}
+
+Essensen i disse er den samme. Den gennemgås på de følgende sider. Vi
+bruger Python som eksempel.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Programmering i Python}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Programmering}
+	Hurtig start:
+	
+	\begin{enumerate}
+		\item \alert{Åbn} \texttt{repl.it/X3G} og klik `Start Now'.
+		\item \alert{Skriv} kode i tekstfeltet.
+		\item \alert{Udfør} dit program ved at klikke på `Run' øverst.
+	\end{enumerate}
+
+	Prøv tingene af undervejs. Vær nysgerrige.
+\end{frame}
+
+\begin{frame}{Grundlæggende elementer}
+Data og ændring af data:
+\begin{enumerate}
+	\item Typer
+	\item Variable
+	\item Operatorer
+\end{enumerate}
+Rækkefølge af udførsel af kommandoer:
+\begin{enumerate}
+	\setcounter{enumi}{4}
+	\item Sekvens
+	\item Gentagelse
+	\item Betinget udførsel
+	\item Modularisering
+\end{enumerate}
+
+Hvert sprog har desuden en \alert{syntaks} (regler for opbygning af kode),
+som kan variere noget.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Eksempler}
+	\begin{lstlisting}[style=python]
+# The very basic example of Python: Hello World
+print("Hello World")
+	\end{lstlisting}
+	\medskip
+	\begin{lstlisting}[style=python]
+forbrug = int(input("Hvad er dit elforbrug?"))
+pris = 1020 + 1.65 * forbrug
+print("Din elregning er:")
+print(pris)
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{1. Typer}
+
+Al data i et program har en \alert{type}.
+
+\medskip
+Nogle typer i Python:
+\medskip
+
+\begin{center}
+	\begin{tabular}{ll}
+		\hline
+		Datatype						&		Eksempel 	\\ \hline \hline
+		String (tekst)					&		"Hej"		\\
+		Integer (heltal)				&		42			\\
+		Float (kommatal)				&		42.0		\\
+		Boolean	(sandhedsværdi)			&		True		\\
+	\end{tabular}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{2. Variable}
+Variabel = Navngiven beholder med data af en bestemt type.
+
+\medskip
+Variabel oprettes, når de bruges første gang.\\
+Generelt:
+\begin{lstlisting}[style=python]
+<variabelnavn> = <værdi>
+\end{lstlisting}
+
+Eksempler:
+\begin{lstlisting}[style=python]
+counter = 27
+greeting = "Hello World!"
+temperature = 44.7
+\end{lstlisting}
+
+
+Variable tildeles værdier med lighedstegn (\texttt{=}):
+
+Bemærk at et variabelnavn på \alert{højre} side henter værdien gemt i
+variablen, mens det på \alert{venstre} side gemmer en ny værdi i variablen.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{3. Operatorer: Nye data fra gamle}
+Almindelig matematik fungerer nogenlunde som det plejer:
+\begin{center}
+	\begin{tabular}{lllr}
+		\hline
+		Operator			& 		Beskrivelse								&		Eksempel		&		Resultat	\\ \hline \hline
+		$+$					&		Læg to operander sammen					&		$40 + 2$		&		42			\\
+		$-$					&		Træk to operander fra hinanden			&		$50 - 8$		&		42			\\
+		$*$					&		Gang to operander 						&		$6 * 7$			&		42			\\
+		$/$					&		Division mellem to operander			&		$12.6 / 3$		&		4.2			\\
+	\end{tabular}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{3. Operatorer: Nye data fra gamle}
+Derudover har vi operatorer som giver en sandhedsværdi:
+\begin{center}
+	\begin{tabular}{llll}
+		\hline
+		Operator			& 		Beskrivelse								&		Eksempel		&		Resultat		\\ \hline \hline
+		$==$				&		Lig med									&		$42 == 3$		&		False			\\
+		$!=$				&		Ikke lig med							&		$42$ != $3$		&		True			\\
+		$<$					&		Mindre end		 						&		$6 < 7$			&		True			\\
+		$<=$				&		Mindre end eller lig med				&		$6 <= 6$		&		True			\\
+		$>$					&		Større end								&		$21 > 5$		&		True			\\
+		$>=$				&		Større end eller lig med				&		$21 >= 5$		&		True			\\
+	\end{tabular}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{llll}
+		\hline
+		Operator			& 		Beskrivelse								&		Eksempel					&		Resultat		\\ \hline \hline
+		\textit{and}				&		Boolsk og								&		$(4 <= 6)$ \textit{and} $(3 < 2)$		&		False			\\
+		\textit{or}				&		Boolsk eller							&		$(4 <= 6)$ \textit{or} $(3 < 2)$		&		True			\\
+		\textit{not}				&		Bolsk ikke		 						&		\textit{not}$(4 < 6)$				&		False			\\
+	\end{tabular}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{4. Sekvens}
+
+Som udgangspunkt udføres kommandoer én efter én i rækkefølge:
+
+\begin{lstlisting}[style=python]
+a = 7
+b = a * a
+a = 8
+b = b + 1
+\end{lstlisting}
+
+Hvad ligger der i \texttt{a} og \texttt{b}?
+\pause
+$$a = 8$$
+$$b = 50$$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{5. Gentagelse}
+
+Generel \texttt{while}-kommando:
+
+\begin{lstlisting}[style=python]
+while <sand/falsk betingelse>:
+	<instruktion>
+	<instruktion>
+	<instruktion>
+	...
+\end{lstlisting}
+Kun den indrykkede kode gentages.
+
+Eksempel (find kvadratroden af 25):
+
+\begin{lstlisting}[style=python]
+r = 0
+while r * r < 25:
+	r = r + 1
+print("The square root of 25 is:")
+print(r)
+\end{lstlisting}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{6. Betinget udførsel}
+
+Generel \texttt{if-else}-kommando:
+
+\begin{lstlisting}[style=python]
+if <sand/falsk-betingelse>:
+	Kode, der udføres, hvis betingelsen er sand
+else:
+	Kode, der udføres, hvis betingelsen er falsk
+\end{lstlisting}
+Kun den indrykkede kode udføres.\\
+\medskip
+Eksempel:
+
+\begin{lstlisting}[style=python]
+if a > b:
+	print("a is larger")
+else:
+	print("b is at least as large")
+\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{7. Modularisering}
+Metoder (funktion, rutine, procedure): \alert{opdeling} og \alert{genbrug} af kode.
+
+\bigskip
+Eksempel:
+
+\begin{lstlisting}[style=python]
+def regning(forbrug):
+	pris = 1020 + 1.65 * forbrug
+	print("Hvis dit forbrug er:")
+	print(forbrug)
+	print("skal du betale")
+	print(pris)
+
+regning(40)
+regning(50)
+\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Python-biblioteket}
+
+\bigskip
+
+Python kommer med et meget stort bibliotek af færdiglavede metoder.
+De bruges til eksempelvis webudvikling, forskning og hobbyprojekter.
+
+\bigskip
+Se for eksempel:
+
+\begin{center}
+	\texttt{https://wiki.python.org/moin/UsefulModules}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Input og output}
+
+Udskriv til brugeren:
+
+\begin{lstlisting}[style=python]
+print(Det der skal skrives)
+\end{lstlisting}
+Vi kan både udskrive konkrete tal og strenge, men også variabler!
+
+\bigskip
+
+Læs fra tastatur (\texttt{skriv int()} omkring input, hvis du vil læse et tal):
+\begin{lstlisting}[style=python]
+navn = input("Hvad hedder du?")
+forbrug = int(input("Hvad er dit elforbrug?"))
+\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Eksempler}
+	\begin{lstlisting}[style=python]
+# The very basic example of Python: Hello World
+print("Hello World")
+	\end{lstlisting}
+	\medskip
+	\begin{lstlisting}[style=python]
+forbrug = int(input("Hvad er dit elforbrug?"))
+pris = 1020 + 1.65 * forbrug
+print("Din elregning er:")
+print(pris)
+	\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Programmering}
+
+\begin{enumerate}
+\item \alert{Åbn} \texttt{https://repl.it/X3G} og klik `Start Now'.
+\item \alert{Skriv} kode i tekstfeltet.
+\item \alert{Udfør} dit program ved at klikke på `Run' øverst.
+\end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

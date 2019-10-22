@@ -1,0 +1,91 @@
+#Program Hej
+print("Hej")
+
+#Program end
+
+
+
+
+
+
+#Program Sum
+tal1=int(input("Indtast tal 1"))
+
+tal2=int(input("Indtast tal 2"))
+
+sum=tal1+tal2
+
+print("Summen er:")
+
+print(sum)
+#Program end
+
+
+
+
+
+#Program Max
+
+tal1=int(input("Indtast tal 1"))
+max=tal1
+
+tal2=int(input("Indtast tal 2"))
+if (tal2>tal1):
+  max=tal2
+
+print("Maksimum var:")
+print(max)
+
+#Program End
+
+
+#Program Divisorer
+tal=int(input("Skriv et tal"))
+
+
+muligDivisor=1
+#Tjek alle mulige divisorer
+while muligDivisor<=tal:
+  
+  #Hvis divisoren gaar op i tallet (rest 0 ved division)
+  if (tal % muligDivisor==0):
+    print("Fandt en divisor!")
+  
+  #Lav den naeste mulige divisor
+  muligDivisor=muligDivisor+1
+
+#Program End
+
+
+
+#Program Random
+
+from random import randint #This line allows us to use random numbers
+
+tal=randint(0, 9)
+print(tal)
+
+#Program End
+
+
+
+
+
+#Program Contains
+tal=int(input("Skriv et tal"))
+if ('3' in str(tal)):
+	print ("Dit tal indeholdt et 3-tal")
+#Program End
+
+
+
+
+
+
+
+
+
+
+
+
+

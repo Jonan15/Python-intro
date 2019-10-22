@@ -1,0 +1,165 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[danish]{babel}
+\usepackage{fullpage}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\parskip1ex
+\parindent0mm
+
+\begin{document}
+
+\centerline{\LARGE\bf Øvelser i Python-programmering}
+
+\subsection*{Opstart}
+
+Åbn \url{https://repl.it/x3g}. Klik `Start Now'. Du behøver ikke at lave en konto.
+
+%Det anbefales at slå auto-complete fra: klik på den lille tandhjul
+%øverst til venstre. Nederst i den nye menu kan du sætte auto-complete
+%til 'disabled'. Tryk på tandhjulet igen for at lukke denne menu.
+
+Skriv dit kode i tekstvinduet. Klik på 'Run' for at køre det.
+De første seks opgaver handler om et program, som findes i
+programfilen (se link nedenfor). Start hver opgave med at kopiere det relevante program ind i
+online-editoren og køre det.
+
+\begin{itemize}
+\item Online-editor: \url{https://repl.it/x3g}
+\item Programfil: \url{http://kortlink.dk/vcaw}
+\item Slides: \url{http://kortlink.dk/vcaz}
+\item Denne seddel: \url{http://kortlink.dk/vcb2}
+\end{itemize}
+
+
+
+\subsection*{Opgaver}
+\begin{enumerate}
+\item {\bf Program Hej} \newline
+Programmet skriver ``\texttt{Hej}''.
+Lav programmet om, så det skriver ``\texttt{Hej Peter!}''
+(erstat Peter med dit eget navn) og kør det igen.
+
+\item {\bf Program Sum} \newline
+Dette program indlæser to tal fra brugeren og
+udskriver deres sum. Kør det. Lav det om, så det udskriver de
+to tals produkt (læs først programmet for at forstå, hvordan det virker).
+
+
+\item {\bf Program Max} \newline
+Programmet læser to tal fra tastaturet og
+udskriver det største. Kør det. Lav det om, så det udskriver
+det største af tre tal i stedet for (læs først programmet for at forstå,
+hvordan det virker).
+
+
+\item {\bf Program Divisorer} \newline
+Programmet læser et tal fra tastaturet og finder
+alle de tal, som går op i det.
+
+Eksempel: Hvis tallet er 12, finder det ud af, at
+1, 2, 3, 4, 6 og 12 går op i det. Kør det.
+
+Programmet skriver ikke divisorerne ud, når de bliver fundet. Lav
+programmet om, så det gør dette (læs først programmet for at forstå,
+hvordan det virker). Lav derefter programmet om, så det i stedet finder
+\emph{antallet} af divisorer.
+
+Lav det derefter om, så det skriver, om
+tallet er et primtal er ej (et primtal er et tal forskelligt fra 1, der kun har de to divisorer 1 og
+tallet selv).
+
+\item {\bf Program Random} \newline
+Programmet Random genererer et tilfældigt tal mellem 0 og 9 og udskriver det.
+Lav det om, så det i stedet genererer et tilfældigt tal mellem 0 og 1000.
+Prøv nu at generere 100 tilfældige tal mellem 0 og 1000 og udskrive det største
+og det mindste.
+
+\item {\bf Program Contains} \newline
+Dette program indlæser et tal og fortæller, om mindst ét af dets cifre er et 3-tal.
+Kør det. Lav programmmet om, så det indlæser et positivt heltal, $n$, og derefter udskriver, hvor mange heltal
+mellem 1 og $n$ (begge inklusive), der indeholder et 3-tal.
+
+Eksempel: Hvis brugeren skriver 20, skal programmet
+udskrive 2, da tallene 3 og 13 indeholder et 3-tal.
+
+\item Lav dit program fra forrige opgave om til svare på følgende spørgsmål:
+\begin{itemize}
+\item Hvor mange tal mellem 1 og 1000000 indeholder både et 3-tal, et 4-tal og et 5-tal?
+\item Hvor mange tal mellem 1 og 1000000 indeholder ikke cifrene 0 og 1?
+\item Hvor mange tal mellem 1 og 1000000 indeholder et 3-tal og ingen 4-taller?
+\end{itemize}
+
+\item I denne opgave skal du skrive dit eget program.
+Skriv det, så det gør følgende:
+\begin{itemize}
+	\item Indlæs et heltal.
+	\item Sålænge tallet er 2 eller mere, gentag:
+	\begin{itemize}
+		\item Hvis tallet er lige, dividér det med 2. Ellers, gang det med 3 og læg 1
+til. Udskriv tallet.
+	\end{itemize}
+\end{itemize}
+
+Eksempel: Tallet 6 skal give følgende udskrift: 3, 10, 5, 16, 8, 4, 2, 1.
+
+(Hint: Husk, hvad du har lavet i de andre programmer og brug evt.
+copy-paste. Og husk, at et tal er lige, hvis 2 går op i det.)
+
+Det er et berømt åbent spørgsmål (stillet af L.~Collatz i 1937) i matematik,
+hvorvidt der findes tal, hvor udskriften aldrig ender - Bemærk, at tallene
+undervejs kan gå både op og ned, så det er ikke klart, at de altid når 1 til
+sidst. Hvad er den længste række, \emph{du} kan finde for et tal (lav
+evt. programmet om til også at tælle længden af rækken)?
+
+
+\item Fibonacci-tallene er betegnelsen for de tal, som findes i følgen \[
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \ldots
+\]
+Fra det tredje tal kan hvert tal beregnes ved at lægge de to foregående tal sammen.
+Skriv et program, som indlæser et tal, $n$, og derefter
+beregner og udskriver det $n$'te Fibonacci-tal.
+
+Eksempel: Hvis brugeren skriver 7, skal tallet 13 udskrives, da $1+1 = 2$ (tal nr. 3), $1+2 = 3$ (tal nr. 4), $2+3 = 5$ (tal nr. 5), $3+5 = 8$ (tal nr. 6) og $5+8 = 13$ (tal nr. 7).
+
+Brug dit program til at beregne Fibonacci-tal nummer 100.
+
+\item Skriv et program, der kan spille Sten, Saks, Papir. Prøv både at lave et, der
+er fair og et, der snyder.
+
+\item Monty Hall-problemet er et matematisk problem. I problemet tilbydes en deltager i en quiz at vælge
+mellem tre kasser. En af kasserne indeholder en præmie, mens de to andre er tomme. Efter deltageren har valgt en kasse, åbner værten en tom kasse blandt de to andre (der må altid være mindst en af dem, der er tom). Der er nu to uåbnede kasser tilbage.
+Nu tilbydes deltageren at skifte fra den kasse, hun oprindeligt valgte, til den anden uåbnede kasse.
+Den kasse, spilleren ender med, åbnes. Hvis den indeholder en præmie, har spilleren vundet, ellers har hun tabt.
+\begin{itemize}
+\item Skriv et program, hvor kan man spille dette spil. Man skal kunne vælge kasse 1, 2 eller 3 til at starte med. Man skal få at vide, hvilken tom kasse, der åbnes af værten, og man skal kunne vælge, om man vil skifte til den sidste kasse eller beholde den, man startede med.
+\item Vi vil nu undersøge, om det er bedst at skifte til den anden kasse eller holde på vores første valg. Lav om i dit program, så spillet nu simuleres 1000 gange, hvor vi skifter kasse og 1000 gange, hvor vi holder på vores oprindelige valg. Hvilken strategi lader til at være bedst?
+\end{itemize}
+
+\item
+En Pythagoræisk Trippel er et talpar $a,b,c$, sådan at $a^2+b^2=c^2$.
+Brug et program til at finde en Pythagoræisk Trippel, hvor $a+b+c=1000$.
+
+
+\item Skriv et program, som ti gange indlæser et heltal
+(positivt eller negativt) fra brugeren og derefter udskriver alle
+delmængder, hvor tallene i delmængden lagt sammen giver nul.
+
+Eksempel: For de ti tal
+
+\medskip
+\centerline{$17$, $-47$, $15$, $-11$, $-5$, $23$, $-13$, $5$, $31$, $-22$}
+\medskip
+
+vil følgende delmængde være en, der lagt sammen giver nul:
+
+\medskip
+\centerline{$-47$, $15$, $-5$, $23$, $5$, $31$, $-22$}
+\medskip
+
+\end{enumerate}
+
+
+\end{document}
