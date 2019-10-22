@@ -14,13 +14,14 @@ Forsøg at få en af delene til at virke inden vi mødes første gang, men brug 
 
 # Praktisk information
 ## Tid og Sted
-Kurset finder sted de følgende tirsdage kl 12-16:
+Kurset finder sted de følgende tirsdage kl 12:15-16:00:
 * Oktober 29
 * November 12 (Ellehammer)
 * November 26
 * December 10
 
-Det foregår i Cortex Lab, lokale 2.0.08, undtagen d. 12. november, hvor det er i TEK's lokale Ellehammer.
+De fleste gange foregår i [Cortex Lab, lokale 2.0.08](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/5683d730423b7d1380c0da9f).
+D. 12. november, er det i [TEK Ellehammer](https://clients.mapsindoors.com/sdu/573f26e4bc1f571b08094312/details/560156db423b7e2140a27614).
 
 
 # Indhold
@@ -43,7 +44,7 @@ Hvis man løber tør for opgaver her, så frygt ej! Det sjoveste er nok hvis man
 
 
 # Litteratur
-Slides tilgængelige her fra siden burde som udgangspunkt være nok til at løse opgaverne. Slides er til en vis grad baseret på bogen "Think Python 2e", se nedenfor.
+De slides som er tilgængelige her fra siden burde som udgangspunkt være nok til at løse opgaverne. Slides er til en vis grad baseret på bogen "Think Python 2e", se nedenfor.
 
 Oplever man problemer, er det godt at lære sig at søge information på internettet. Stack Overflow har svar på de fleste programmeringsspørgsmål.
 
