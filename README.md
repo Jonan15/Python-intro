@@ -27,12 +27,12 @@ D. 12. november, er det i [TEK Ellehammer](https://clients.mapsindoors.com/sdu/5
 # Indhold
 Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne. (Ændret 26. maj)
 
-| Dato     | Modul 1                   | Opgaver     | Modul 2                    | Opgaver     |
-| :---     | :---                      | :---        | :---                       | :---        |
-| 29. okt. | Intro, variabler og typer | Link kommer | If-sætninger og funktioner | Link kommer |
-| 12. nov. | Lister og løkker          | Link kommer | Strenge                    | Link kommer |
-| 26. nov. | Dictionaries              | Link kommer | Filer                      | Link kommer |
-| 10. dec. | Klasser og objekter       | Link kommer | (Buffer)                   | Link kommer |
+| Dato     | Modul 1                                                    | Opgaver                   | Modul 2                                                      | Opgaver                   |
+| :---     | :---                                                       | :---                      | :---                                                         | :---                      |
+| 29. okt. | [Intro, variabler og typer](res/intro_variable_udtryk.pdf) | [Link](kortlink.dk/239ku) | [If-sætninger og funktioner](res/conditionals_functions.pdf) | [Link](kortlink.dk/239kv) |
+| 12. nov. | Lister og løkker                                           | Link kommer               | Strenge                                                      | Link kommer               |
+| 26. nov. | Dictionaries                                               | Link kommer               | Filer                                                        | Link kommer               |
+| 10. dec. | Klasser og objekter                                        | Link kommer               | (Buffer)                                                     | Link kommer               |
 
 
 ### Ekstra udfordringer/øvelser
