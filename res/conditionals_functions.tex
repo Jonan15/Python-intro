@@ -25,7 +25,6 @@
 %\end{frame}
 
 \section{Conditionals}
-%%%% TODO: fix < og >
 \begin{frame}[fragile]{Boolske udtryk - sandt og falsk}
 	Vi har ofte brug for at sammenligne ting, for at tage beslutninger. For at sammenligne om ting er lig med hinanden bruges dobbelt lig med, ==. 
 
@@ -74,8 +73,7 @@ Eksempler, alle giver True.
 		\column{.4\textwidth}
 		\begin{lstlisting}[style=python]
 not (3 < 4)
-not (True and False)
-not True and False
+True == (not False)
 		\end{lstlisting}
 		\pause
 		\column{.4\textwidth}
@@ -83,7 +81,6 @@ not True and False
 		\begin{lstlisting}[style=python]
 False
 True
-False
 		\end{lstlisting}
 	\end{columns}
 \end{frame}
@@ -123,6 +120,9 @@ print("You have " + str(money) + " money left")
 \begin{frame}[fragile]{If-sætninger - at tage et valg}
 	En if-sætning er opbygget af en eller flere betingelser og en eller flere "kroppe" af kode.
 	
+	\begin{columns}
+	
+	\column{.35\textwidth}
 	\begin{lstlisting}[style=python]
 if (<betingelse>):
 	#kode
@@ -131,6 +131,21 @@ elif (<betingelse):
 else:
 	#kode
 	\end{lstlisting}
+	
+	\column{.2\textwidth}
+	\centering
+	\includegraphics[width=0.5\textwidth]{jigsaw-if.png}
+	
+	\includegraphics[width=0.5\textwidth]{jigsaw-elif.png}
+	
+	\includegraphics[width=0.5\textwidth]{jigsaw-else.png}
+	
+	\column{.2\textwidth}
+	\centering
+	
+	\includegraphics[width=0.5\textwidth]{jigsaw-example.png}
+	
+	\end{columns}
 \end{frame}
 
 
@@ -183,7 +198,7 @@ blunder = True
 \end{frame}
 
 \begin{frame}[fragile]{If-sætninger - at tage et valg}
-	Der kan også være situationer, hvor bare én af flere ting er nok, for at udføre noget. F.eks. kan enten en fødselsdag eller en bommert være anledning til kage. Hvordan vil man så skrive sit program? Måske sådan her:
+	Der kan også være situationer, hvor bare én af flere ting er nok, for at udføre noget. F.eks. kan enten en fødselsdag eller en bommert være anledning til kage. Hvordan vil man så skrive sit program? \pause Måske sådan her:
 	\begin{lstlisting}[style=python]
 birthday = False
 blunder = True
@@ -192,7 +207,6 @@ if (birthday):
 	caketime = True
 if (blunder):
 	caketime = True
-	
 if (caketime):
 	print("It's cake time!")
 	\end{lstlisting}
@@ -201,6 +215,7 @@ if (caketime):
 
 \begin{frame}[fragile]{If-sætninger - at tage et valg}
 	Heldigvis findes der en bedre måde. Man kan sammensætte boolske udtryk med \texttt{and} og \texttt{or}. Med \texttt{and} skal begge sider være opfyldt før det giver True, med \texttt{or} skal mindst én side være True før det giver True.
+	\pause 
 	\begin{lstlisting}[style=python]
 age = 20
 money = 42
@@ -238,22 +253,66 @@ type("Hej")
 \end{frame}
 
 \begin{frame}[fragile]{Funktioner - undgå gentagelser}
-	Husk, man kan kombinere funktionskald. Så i stedet for:
-	
+	Lad os starte med nogle simplere funktioner, nogle der ikke tager nogle argumenter.
+	Forestil dig at har et program, hvor du gerne vil adskille forskellige output med en horisontal linje:
 	\begin{lstlisting}[style=python]
-a = 3.14/2
-a = int(a)
-print(a)
-	\end{lstlisting}
-	
-	Så kan man skrive:
-	
-	\begin{lstlisting}[style=python]
-print(int(3.14/2))
+print(3.14/2)
+print("--------")
+print(23+19)
+print("--------")
+print(3**2+4**2)
+print("--------")
+print("la"*5)
 	\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{Funktioner - undgå gentagelser}
+Men nu finder du ud af du hellere vil ændre på stilen af linjen, f.eks. gøre den længere eller bruge et andet tegn. Så skal du til at ændre det alle stederne.
+\begin{lstlisting}[style=python]
+print(3.14/2)
+print("++++++++")
+print(23+19)
+print("++++++++")
+print(3**2+4**2)
+print("++++++++")
+print("la"*5)
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Funktioner - undgå gentagelser}
+Vi kan istedet definere det én gang, og være sikker på at det bliver ens hver gang:
+\begin{columns}
+	\column{.4\textwidth}
+	\begin{lstlisting}[style=python]
+def line():
+  print("++++++++")
+	\end{lstlisting}
+	
+	\column{.4\textwidth}
+	\begin{lstlisting}[style=python]
+print(3.14/2)
+line()
+print(23+19)
+line()
+print(3**2+4**2)
+line()
+print("la"*5)
+	\end{lstlisting}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Funktioner - undgå gentagelser}
+Bemærk, hvordan vi bruger en funktion ved at skrive navnet efterfulgt af parenteser. Vi siger at vi \textbf{kalder} funktionen.
+
+Man kan enten tænke på det som at koden fra funktionen bliver indsat, der hvor funktionen bliver kaldt, eller at man springer hen og udfører koden i funktionen og springer tilbage når den er færdig.
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Funktioner - undgå gentagelser}
+Vi springer nu til hjemmelavede funktioner som tager argumenter.
+
 Forestil jer I har skrevet noget lækkert kode, men I skal hele tiden trække 1 fra og så printe værdien.
 \begin{lstlisting}[style=python]
 a = 7
@@ -295,13 +354,17 @@ print(f)
 
 
 \begin{frame}[fragile]{Funktioner - undgå gentagelser}
-Men programmører er dovne, vi kan gøre det smartere med funktioner:
+Med funktioner kan vi gøre det smartere. Vi laver en funktion der lægger 1 til hvad end den får givet og så printer det:
 \begin{columns}
 	\column{0.4\textwidth}
 	\begin{lstlisting}[style=python]
 def newPrint(x):
 	print(x+1)
 
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
 a = 7
 newPrint(a)
 c = (3**2 + 4**2)**0.5
@@ -309,28 +372,16 @@ newPrint(c)
 e = 17 // 3
 newPrint(e)
 	\end{lstlisting}
-	\column{0.4\textwidth}
-	Output
-	\begin{lstlisting}[style=python]
-8
-6.0
-6
-	\end{lstlisting}	
 \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]{Funktioner - undgå gentagelser}
-En funktion er opbygget således:
-\begin{lstlisting}[style=python]
-def <funktions navn>(<param. 1>, <param. 2>, ...):
-	#kode
-	return <værdi>
-\end{lstlisting}
-Hvis man har et \texttt{return} kan man sende et resultat tilbage og gemme/bruge til noget andet.
+\pause
+Bemærk, at når vi nu kalder \texttt{newPrint}, skal vi give den noget med, og det bliver sat ind på x's plads i funktionen.
 \end{frame}
 
 
+
 \begin{frame}[fragile]{Funktioner - undgå gentagelser}
+Nogle gange vil man gerne udregne og gemme et resultat istedet for bare at printe det med det samme.
+
 	Her er et eksempel på noget kode der udregner Pythagoras men som er copy-pastet rundt:
 	\begin{lstlisting}[style=python]
 a = 4
@@ -348,6 +399,7 @@ d = (a**2 + b**2)**0.5
 def pyth(a, b):
 	x = (a**2 + b**2)**0.5
 	return x
+
 c = pyth(4, 2)
 d = pyth(3, 4)
 	\end{lstlisting}
@@ -357,17 +409,31 @@ d = pyth(3, 4)
 
 
 \begin{frame}[fragile]{Funktioner - undgå gentagelser}
-	En funktion behøver hverken have en retur værdi eller nogle parametre, den kan godt bare gøre det samme hver gang. F.eks.:
-	\begin{lstlisting}[style=python]
-def print_twice():
-	s = "Hej med dig!"
-	print(s)
-	print(s)
-	
-print_twice()
-	\end{lstlisting}
+En funktion er opbygget således:
+\begin{lstlisting}[style=python]
+def <funktions navn>(<param. 1>, <param. 2>, ...):
+#kode
+return <værdi>
+\end{lstlisting}
+Hvis man har et \texttt{return} kan man sende et resultat tilbage og gemme/bruge til noget andet.
 \end{frame}
 
+
+\begin{frame}[fragile]{Funktioner - undgå gentagelser}
+Husk, man kan kombinere funktionskald. Så i stedet for:
+
+\begin{lstlisting}[style=python]
+a = 3.14/2
+a = int(a)
+print(a)
+\end{lstlisting}
+
+Så kan man skrive:
+
+\begin{lstlisting}[style=python]
+print(int(3.14/2))
+\end{lstlisting}
+\end{frame}
 
 \begin{frame}[fragile]{Recap}
 	Hvad har vi set på i dette modul?
