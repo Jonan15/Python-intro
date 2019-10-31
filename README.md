@@ -25,7 +25,7 @@ D. 12. november, er det i [TEK Ellehammer](https://clients.mapsindoors.com/sdu/5
 
 
 # Indhold
-Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne. (Ændret kortlink.dk/23b2226. maj)
+Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne. 
 
 | Dato     | Modul 1                                                      | Opgaver                          | Modul 2                                                  | Opgaver                          |
 | :---     | :---                                                         | :---                             | :---                                                     | :---                             |
