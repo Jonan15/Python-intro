@@ -30,7 +30,7 @@ Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne
 | Dato     | Modul 1                                                      | Opgaver                          | Modul 2                                                  | Opgaver                          |
 | :---     | :---                                                         | :---                             | :---                                                     | :---                             |
 | 29. okt. | [Intro, variabler og typer](intro_variable_typer_udtryk.pdf) | [Link](http://kortlink.dk/239ku) | [If-sætninger og funktioner](conditionals_functions.pdf) | [Link](http://kortlink.dk/239kv) |
-| 12. nov. | [Lister og løkker](loops_lists.pdf)                          | [Link](http://kortlink.dk/23azz) | [Strenge](strings.pdf)                                   | [Link](http://kortlink.dk/23b22) |
+| 12. nov. | [Løkker og lister](loops_lists.pdf)                          | [Link](http://kortlink.dk/23azz) | [Strenge](strings.pdf)                                   | [Link](http://kortlink.dk/23b22) |
 | 26. nov. | Dictionaries                                                 | Link kommer                      | Filer                                                    | Link kommer                      |
 | 10. dec. | Klasser og objekter                                          | Link kommer                      | (Buffer)                                                 | Link kommer                      |
 
