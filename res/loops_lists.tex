@@ -13,12 +13,13 @@
 \end{frame}
 
 \section{Recap}
-\begin{frame}[fragile]{Certifikat}
-Alle deltagere den sidste gang kan få et certifikat på deltagelse.
-\begin{center}
-	\includegraphics[width=.8\textwidth]{certificate.pdf}
-\end{center}
-\end{frame}
+
+%\begin{frame}[fragile]{Certifikat}
+%Alle deltagere den sidste gang kan få et certifikat på deltagelse.
+%\begin{center}
+%	\includegraphics[width=.8\textwidth]{certificate.pdf}
+%\end{center}
+%\end{frame}
 
 
 \begin{frame}[fragile]{Hvad lærte I sidst?}
@@ -32,13 +33,14 @@ Diskutér to minutter med sidemanden, hvad I lærte sidst.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Apropos funktioner}
-	\begin{center}
-		\includegraphics[width=0.8\textwidth]{figs/funcs.png}
-	\end{center}
-\pause
-Lad os prøve at lave Fibonacci tallene.
-\end{frame}
+%
+%\begin{frame}[fragile]{Apropos funktioner}
+%	\begin{center}
+%		\includegraphics[width=0.8\textwidth]{figs/funcs.png}
+%	\end{center}
+%\pause
+%Lad os prøve at lave Fibonacci tallene.
+%\end{frame}
 
 \section{Løkker}
 
@@ -74,11 +76,158 @@ print(5)
 	\end{center}
 \end{frame}
 
+%
+\begin{frame}[fragile]{While loop}
+Der er to slags løkker I vil møde det meste af tiden, og den første er \texttt{while}-løkken. Denne kører så længe en betingelse er overholdt:
+\begin{lstlisting}[style=python]
+while (<condition>):
+	<instruktion>
+	<instruktion>
+	<instruktion>
+\end{lstlisting}
+I vores tælleeksempel:
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+i = 1
+while (i < 6):
+	print(i)
+	i = i + 1
+	\end{lstlisting}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+1
+2
+3
+4
+5
+	\end{lstlisting}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{While loop}
+Hvad gør følgende løkke:
+\begin{columns}
+\column{0.4\textwidth}
+\begin{lstlisting}[style=python]
+i = 1
+while (True):
+	print(i)
+	i = i + 1
+\end{lstlisting}
+\pause
+\column{0.4\textwidth}
+\begin{lstlisting}[style=python]
+1
+2
+3
+4
+5
+6
+7
+8
+.
+.
+.
+\end{lstlisting}
+\end{columns}
+Det kører for evigt!
+\end{frame}
+
+
+\begin{frame}[fragile]{While loop}
+Giver while-true løkker mening? Hvor kan de bruges?
+\pause
+\begin{itemize}
+\item Kode som skal køre hele tiden (fx operativ system)
+\item Når man ikke kender antallet af gange koden skal gentages
+\begin{itemize}
+\item Hvordan brydes løkken så?
+\end{itemize}
+\end{itemize}
+\pause
+Brug \texttt{break}'s:
+\begin{columns}
+\column{0.4\textwidth}
+\begin{lstlisting}[style=python]
+i = 1
+while(True):
+	print(i)
+	i = i + 1
+	if (i > 5):
+		break
+\end{lstlisting}
+\pause
+\column{0.4\textwidth}
+\begin{lstlisting}[style=python]
+1
+2
+3
+4
+5
+\end{lstlisting}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{While loop}
+Som tommelfingerregel så forsøg at undgå \texttt{break}.
+
+I første omgang så forsøg at bruge den betingelse som løkken kører efter.
+\pause
+
+I anden omgang kan følgende konstruktion bruges:
+\begin{columns}
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+keeprun = True
+i = 0
+while(keeprun):
+	print(i)
+	i = i + 1
+	if (i > 5):
+		keeprun = False
+	\end{lstlisting}
+	\pause
+	\column{0.4\textwidth}
+	\begin{lstlisting}[style=python]
+0
+1
+2
+3
+4
+5
+	\end{lstlisting}
+\end{columns}
+\end{frame}
+
+%\begin{frame}[fragile]{While loop}
+%Vi kan også springe videre til næste iteration med \texttt{continue}:
+%\begin{columns}
+%\column{0.4\textwidth}
+%\begin{lstlisting}[style=python]
+%i = 1
+%while(True):
+%	if (i == 2):
+%		continue
+%	print(i)
+%	i = i + 1
+%\end{lstlisting}
+%\column{0.4\textwidth}
+%\begin{lstlisting}[style=python]
+%1
+%3
+%4
+%5
+%\end{lstlisting}
+%\end{columns}
+%\end{frame}
 
 \begin{frame}[fragile]{For loop}
-	Gentagelse et fast antal gange ved hjælp af for-løkke:
+	Den anden type løkke i vil møde er for-løkker.
+	
+	I Python fungerer det som et for each loop. Altså for hvert element i en eller anden mængde, f.eks. heltal fra 0 til 4.
 	\begin{lstlisting}[style=python]
-for <variabel> in range(<antal>):
+for <variabel> in <mængde>:
 	<instruktion>
 	<instruktion>
 	<instruktion>
@@ -88,7 +237,7 @@ for <variabel> in range(<antal>):
 	\begin{columns}
 		\column{0.4\textwidth}
 		\begin{lstlisting}[style=python]
-for i in range(5):
+for i in range(4):
 	print(i)
 		\end{lstlisting}
 		\column{0.4\textwidth}
@@ -97,7 +246,6 @@ for i in range(5):
 1
 2
 3
-4
 		\end{lstlisting}
 	\end{columns}
 \end{frame}
@@ -129,12 +277,12 @@ for i in range(1, 6):
 \begin{frame}[fragile]{For loop}
 	Vi kan også tage skridt af større end en:
 	\begin{columns}
-		\column{0.4\textwidth}
+		\column{0.45\textwidth}
 		\begin{lstlisting}[style=python]
 for i in range(1, 10, 3):
 	print(i)
 		\end{lstlisting}
-		\column{0.4\textwidth}
+		\column{0.35\textwidth}
 				\begin{lstlisting}[style=python]
 1
 4
@@ -144,142 +292,25 @@ for i in range(1, 10, 3):
 \end{frame}
 
 
-\begin{frame}[fragile]{While loop}
-	En anden type løkke er \texttt{while}-løkken. Denne kører så længe en betingelse er overholdt:
-		\begin{lstlisting}[style=python]
-while (<condition>):
-	<instruktion>
-	<instruktion>
-	<instruktion>
-		\end{lstlisting}
-	Tilbage til vores tælleeksempel:
-	\begin{columns}
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-i = 1
-while (i < 6):
-	print(i)
-	i = i + 1
-		\end{lstlisting}
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-1
-2
-3
-4
-5
-		\end{lstlisting}
-	\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]{While loop}
-	Hvad gør følgende løkke:
-	\begin{columns}
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-i = 1
-while (True):
-	print(i)
-	i = i + 1
-		\end{lstlisting}
-		\pause
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-1
-2
-3
-4
-5
-6
-7
-8
-.
-.
-.
-		\end{lstlisting}
-	\end{columns}
-	Det kører for evigt!
-\end{frame}
-
-
-\begin{frame}[fragile]{While loop}
-	Giver while-true løkker mening? Hvor kan de bruges?
-	\pause
-	\begin{itemize}
-		\item Kode som skal køre hele tiden (fx operativ system)
-		\item Når man ikke kender antallet af gange koden skal gentages
-		\begin{itemize}
-			\item Hvordan brydes løkken så?
-		\end{itemize}
-	\end{itemize}
-	\pause
-	Brug \texttt{break}'s:
-	\begin{columns}
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-i = 1
-While(True):
-	print(i)
-	i = i + 1
-	if (i > 5):
-		break
-		\end{lstlisting}
-		\pause
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-1
-2
-3
-4
-5
-		\end{lstlisting}
-	\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]{While loop}
-	Vi kan også springe videre til næste iteration med \texttt{continue}:
-	\begin{columns}
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-i = 1
-While(True):
-	if (i == 2):
-		continue
-	print(i)
-	i = i + 1
-		\end{lstlisting}
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-1
-3
-4
-5
-		\end{lstlisting}
-	\end{columns}
-\end{frame}
 
 \begin{frame}[fragile]{Nested loops}
 	Man kan også have løkker i løkker:
 	\begin{columns}
 		\column{0.4\textwidth}
 		\begin{lstlisting}[style=python]
-for i in range(5):
-	for j in range(2):
-		print(j)
+for i in range(2):
+	for j in range(3):
+		print(i, j)
 		\end{lstlisting}
 		\pause
 		\column{0.4\textwidth}
 		\begin{lstlisting}[style=python]
-0
-1
-0
-1
-0
-1
-0
-1
-0
-1
+0 0
+0 1
+0 2
+1 0
+1 1
+1 2
 		\end{lstlisting}
 	\end{columns}
 \end{frame}
@@ -331,7 +362,7 @@ print(mylist[2])
 3
 		\end{lstlisting}
 	\end{columns}
-	WTF? \pause Vi tæller fra 0.
+	Wat? \pause Vi tæller fra 0.
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{figs/list.pdf}
 	\end{center}
@@ -342,7 +373,7 @@ print(mylist[2])
 \begin{frame}[fragile]{Indeksering i lister}
 Vi kan indeksere med alle slags værdier:
 \begin{columns}
-	\column{0.4\textwidth}
+	\column{0.5\textwidth}
 	\begin{lstlisting}[style=python]
 mylist = [4, 0, 3, 8]
 x = 1
@@ -350,7 +381,7 @@ print(mylist[x])
 print(mylist[len(mylist)-1])
 	\end{lstlisting}
 	\pause
-	\column{0.4\textwidth}
+	\column{0.3\textwidth}
 	\begin{lstlisting}[style=python]
 0
 8
@@ -453,7 +484,7 @@ print(mylist)
 \begin{frame}[fragile]{Listemetoder}
 	Længde af en liste.
 	\begin{columns}
-		\column{0.4\textwidth}
+		\column{0.55\textwidth}
 		\begin{lstlisting}[style=python]
 mylist = [4, 0, 3, 8]
 x = len(mylist)
@@ -461,7 +492,7 @@ print(x)
 		\end{lstlisting}
 		\pause
 		
-		\column{0.4\textwidth}
+		\column{0.25\textwidth}
 		\begin{lstlisting}[style=python]
 4
 		\end{lstlisting}
@@ -469,7 +500,7 @@ print(x)
 	\pause
 	Concatenation:
 	\begin{columns}
-		\column{0.4\textwidth}
+		\column{0.55\textwidth}
 		\begin{lstlisting}[style=python]
 mylist1 = [1, 2]
 mylist2 = [3, 4]
@@ -478,7 +509,7 @@ print(mylist3)
 		\end{lstlisting}
 		\pause
 		
-		\column{0.4\textwidth}
+		\column{0.25\textwidth}
 		\begin{lstlisting}[style=python]
 [1, 2, 3, 4]
 		\end{lstlisting}
@@ -550,7 +581,7 @@ Når man kigger på
 	\column{0.4\textwidth}
 	\begin{lstlisting}[style=python]
 for i in range(5):
-print(i)
+	print(i)
 	\end{lstlisting}
 	\column{0.4\textwidth}
 	\begin{lstlisting}[style=python]
