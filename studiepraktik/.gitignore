@@ -1,4 +1,6 @@
-
+*.nav
+*.snm
+*.vrb
 *.aux
 *.log
 *.toc
