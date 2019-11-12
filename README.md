@@ -34,6 +34,7 @@ Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne
 | 26. nov. | Dictionaries                                                 | Link kommer                      | Filer                                                    | Link kommer                      |
 | 10. dec. | Klasser og objekter                                          | Link kommer                      | (Buffer)                                                 | Link kommer                      |
 
+[Dag 2 (12. nov.) Pandas øvelser.](https://kortlink.dk/23fqw)
 
 ### Ekstra udfordringer/øvelser
 Hvis man løber tør for opgaver her, så frygt ej! Det sjoveste er nok hvis man finder et lille projekt (spil eller andet simpelt program), da man ofte har en større motivation til sine egne projekter. Hvis man ikke lige har en idé (det er helt normalt) så findes der et utal af programmeringsøvelser på nettet. Jeg anbefaler:
