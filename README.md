@@ -35,6 +35,7 @@ Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne
 | 10. dec. | Klasser og objekter                                          | Link kommer                      | (Buffer)                                                 | Link kommer                      |
 
 [Dag 2 (12. nov.) Pandas øvelser.](https://kortlink.dk/23fqw)
+
 [Pandas tutorial](http://www.gregreda.com/2013/10/26/working-with-pandas-dataframes/)
 
 ### Ekstra udfordringer/øvelser
