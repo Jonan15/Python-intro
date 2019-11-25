@@ -31,7 +31,7 @@ Her kan du se den foreløbige plan. Der tages forbehold for ændringer i emnerne
 | :---     | :---                                                         | :---                             | :---                                                     | :---                             |
 | 29. okt. | [Intro, variabler og typer](intro_variable_typer_udtryk.pdf) | [Link](http://kortlink.dk/239ku) | [If-sætninger og funktioner](conditionals_functions.pdf) | [Link](http://kortlink.dk/239kv) |
 | 12. nov. | [Løkker og lister](loops_lists.pdf)                          | [Link](http://kortlink.dk/23azz) | [Strenge](strings.pdf)                                   | [Link](http://kortlink.dk/23b22) |
-| 26. nov. | Dictionaries                                                 | Link kommer                      | Filer                                                    | Link kommer                      |
+| 26. nov. | [Dictionaries & Filer](dictionaries_files.pdf)               | [Link](http://kortlink.dk/23u5y)                    | -                                                   | -                     |
 | 10. dec. | Klasser og objekter                                          | Link kommer                      | (Buffer)                                                 | Link kommer                      |
 
 [Dag 2 (12. nov.) Pandas øvelser.](https://kortlink.dk/23fqw)

@@ -24,94 +24,94 @@
 	\end{itemize}
 \end{frame}
 
-
-\begin{frame}[fragile]{Objekter og metoder}
-	I har prøvet at bruge funktioner som:
-	
-	\begin{lstlisting}[style=python]
-x = [1, 2]
-x.append(3)
-print(x)
-	\end{lstlisting}
-	
-	\pause
-	
-	Output:
-	\begin{lstlisting}[style=python]
-[1, 2, 3]
-	\end{lstlisting}
-	
-	\pause
-	
-	Har I undret jer over hvad punktummet betyder? \pause Hvorfor skriver man ikke:
-	\begin{lstlisting}[style=python]
-append(x, 3)
-	\end{lstlisting}
-	
-\end{frame}
-
-
-\begin{frame}[fragile]{Objekter og metoder}
-	Hvad sker der hvis man skriver:
-	
-	\begin{lstlisting}[style=python]
-x = 2
-x.append(3)
-	\end{lstlisting}
-	
-	\pause
-	
-	Output:
-	\begin{lstlisting}[style=python]
-...
- 
-AttributeError: 'int' object has no attribute 'append'
-	\end{lstlisting}
-	
-	\pause
-	
-	Men så må det være tilfældet at - \texttt{'list' object has attribute 'append'}.
-	
-	Hvad end det så betyder.
-	
-\end{frame}
-
-
-\begin{frame}[fragile]{Objekter og metoder}
-	Man kan tænke på det som et "interface" på "kassen".
-	
-	\begin{columns}
-		\column{0.4\textwidth}
-		\begin{lstlisting}[style=python]
-x = [1,2]
-x.append(3)
-		\end{lstlisting}
-		
-		\column{0.4\textwidth}
-		\includegraphics[width=0.8\textwidth]{objectmethod.png}
-	\end{columns}
-	
-	Eksempler på flere metoder kan findes på: \url{https://docs.python.org/3/tutorial/datastructures.html}
-\end{frame}
-
-
-\begin{frame}[fragile]{Objekter og metoder}
-Et andet eksempel kunne være
-
-\begin{columns}
-	\column{0.4\textwidth}
-	\begin{lstlisting}[style=python]
-x = "TEKST"
-x.lower()
-	\end{lstlisting}
-	
-	\column{0.4\textwidth}
-	\includegraphics[width=0.8\textwidth]{stringmethod.png}
-\end{columns}
-
-Eksempler på flere metoder kan findes på: \url{https://docs.python.org/3/library/stdtypes.html#str}
-\end{frame}
-
+%
+%\begin{frame}[fragile]{Objekter og metoder}
+%	I har prøvet at bruge funktioner som:
+%	
+%	\begin{lstlisting}[style=python]
+%x = [1, 2]
+%x.append(3)
+%print(x)
+%	\end{lstlisting}
+%	
+%	\pause
+%	
+%	Output:
+%	\begin{lstlisting}[style=python]
+%[1, 2, 3]
+%	\end{lstlisting}
+%	
+%	\pause
+%	
+%	Har I undret jer over hvad punktummet betyder? \pause Hvorfor skriver man ikke:
+%	\begin{lstlisting}[style=python]
+%append(x, 3)
+%	\end{lstlisting}
+%	
+%\end{frame}
+%
+%
+%\begin{frame}[fragile]{Objekter og metoder}
+%	Hvad sker der hvis man skriver:
+%	
+%	\begin{lstlisting}[style=python]
+%x = 2
+%x.append(3)
+%	\end{lstlisting}
+%	
+%	\pause
+%	
+%	Output:
+%	\begin{lstlisting}[style=python]
+%...
+% 
+%AttributeError: 'int' object has no attribute 'append'
+%	\end{lstlisting}
+%	
+%	\pause
+%	
+%	Men så må det være tilfældet at - \texttt{'list' object has attribute 'append'}.
+%	
+%	Hvad end det så betyder.
+%	
+%\end{frame}
+%
+%
+%\begin{frame}[fragile]{Objekter og metoder}
+%	Man kan tænke på det som et "interface" på "kassen".
+%	
+%	\begin{columns}
+%		\column{0.4\textwidth}
+%		\begin{lstlisting}[style=python]
+%x = [1,2]
+%x.append(3)
+%		\end{lstlisting}
+%		
+%		\column{0.4\textwidth}
+%		\includegraphics[width=0.8\textwidth]{objectmethod.png}
+%	\end{columns}
+%	
+%	Eksempler på flere metoder kan findes på: \url{https://docs.python.org/3/tutorial/datastructures.html}
+%\end{frame}
+%
+%
+%\begin{frame}[fragile]{Objekter og metoder}
+%Et andet eksempel kunne være
+%
+%\begin{columns}
+%	\column{0.4\textwidth}
+%	\begin{lstlisting}[style=python]
+%x = "TEKST"
+%x.lower()
+%	\end{lstlisting}
+%	
+%	\column{0.4\textwidth}
+%	\includegraphics[width=0.8\textwidth]{stringmethod.png}
+%\end{columns}
+%
+%Eksempler på flere metoder kan findes på: \url{https://docs.python.org/3/library/stdtypes.html#str}
+%\end{frame}
+%
 
 
 
@@ -138,7 +138,39 @@ translate = {"hund" : "dog", "kat" : "cat", "hest" : "horse"}
 \end{frame}
 
 \begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
-	Nu kan vi bruge vores dictionary til at slå oversættelserne op. Hvis man har et par "x" : "y", så bruger man den forreste streng, "x", som index for at finde "y".
+Dictionary strukturen kan bruges til rigtig mange ting, f.eks.:
+
+\medskip
+
+\pause
+
+\begin{columns}
+	\column{0.5\textwidth}
+	En person
+	\begin{lstlisting}[style=python]
+person = {"name"  : "Bamse",
+          "age"   : 25,
+          "height": 187}
+	\end{lstlisting}
+	
+	\pause
+	
+	\column{0.45\textwidth}
+	Et varekatalog
+	\begin{lstlisting}[style=python]
+price = {"Banana" : 10,
+         "Milk"   : 5,
+         "Bread"  : 20,
+         "Salt"   : 2}
+	\end{lstlisting}
+\end{columns}	
+
+\end{frame}
+
+\begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
+	Lad os vende tilbage til ordbogseksemplet.
+
+	Vi bruge vores dictionary til at slå oversættelserne op. Hvis man har et par "x" : "y", så bruger man den forreste streng, "x", som index for at finde "y".
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{lstlisting}[style=python]
@@ -238,18 +270,18 @@ translate = {"hund" : "dog",
              "kat" : "cat", 
              "hest" : "horse"}
 for navn in translate:
-  print("dansk: " + 
-        navn + 
-        ", engelsk: " + 
-        translate[navn])
+  print("Dansk:"
+        , navn 
+        , "Engelsk:"
+        , translate[navn])
 		\end{lstlisting}
 		
 		\pause
 		\column{0.45\textwidth}
 		\begin{lstlisting}[style=python]
-dansk: hund, engelsk: dog
-dansk: kat, engelsk: cat
-dansk: hest, engelsk: horse
+Dansk: hund Engelsk: dog
+Dansk: kat Engelsk: cat
+Dansk: hest Engelsk: horse
 		\end{lstlisting}
 	\end{columns}	
 \end{frame}
@@ -285,41 +317,42 @@ translate = {"hund" : "dog",
              "kat" : "cat", 
              "hest" : "horse"}
 for key, val in translate.items():
-  print("dansk: " + 
-        key + 
-        ", engelsk: " + 
-        val)
+  print("Dansk:"
+        , key
+        , "Engelsk:"
+        , val)
 		\end{lstlisting}
 		
 		\pause
 		\column{0.44\textwidth}
 		\begin{lstlisting}[style=python]
-dansk: hund, engelsk: dog
-dansk: kat, engelsk: cat
-dansk: hest, engelsk: horse
+Dansk: hund Engelsk: dog
+Dansk: kat Engelsk: cat
+Dansk: hest Engelsk: horse
 		\end{lstlisting}
 	\end{columns}	
 \end{frame}
 
 \begin{frame}[fragile]{Dictionaries - Gem data og find det igen}
-	Dictionaries kan bruges til meget andet, og tingene (keys) behøver ikke være strenge, det kan være hvad som helst. Her er et eksempel på en repræsentation af en person.
+	Lad os se, hvordan vi kan bruge de andre eksempler på dictionaries, vi havde fra starten.
+	
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{lstlisting}[style=python]
 person = {"name" : "Bamse",
-          "age": 24,
+          "age": 25,
           "height": 187}
 
-if (person["height"] >= 182):
-  print("You are tall "
-        + person["name"])
+if (person["height"] >= 180):
+  print("You are tall", 
+         person["name"])
 else:
-  print("You can still grow "
-        + person["name"])
+  print("You can still grow"
+        , person["name"])
 		\end{lstlisting}
 		
 		\pause
-		\column{0.3\textwidth}
+		\column{0.35\textwidth}
 		\begin{lstlisting}[style=python]
 You are tall Bamse
 		\end{lstlisting}
@@ -643,37 +676,52 @@ except:
 \end{frame}
 
 
-\begin{frame}[fragile]{Afsluttende bemærkning}
-I har nu lært om bl.a.
+\begin{frame}[fragile]{Hvad har vi lært?}
+
 \begin{itemize}
-	\item Typer \& variabler
-	\item If-sætninger
-	\item Funktioner
-	\item Lister
-	\item Løkker
-	\item Strenge
 	\item Dictionaries
-	\item Filer
+	\item Metoder på dictionaries
+	\item Læse fra filer
+	\item Skrive til filer
+	\item Fange og håndtere fejl
 \end{itemize}
 
 Hvilket i princippet er mere end rigeligt til at kunne gøre "alt".
 
 
 \end{frame}
-
-
-
-\begin{frame}[fragile]{Afsluttende bemærkning}
-Det vigtigste vi ikke har lært om er hvordan man laver sine egne "klasser", sine egne typer.
-
-\pause
-
-Derudover er der masser af detaljer om de ting vi har lært som også kan udforskes.
-
-\pause
-
-Læs andres kode, læs bøger, se videoer, lav tutorials, lav et projekt og find hjælp på nettet.
-
-\end{frame}
+%
+%\begin{frame}[fragile]{Afsluttende bemærkning}
+%I har nu lært om bl.a.
+%\begin{itemize}
+%	\item Typer \& variabler
+%	\item If-sætninger
+%	\item Funktioner
+%	\item Lister
+%	\item Løkker
+%	\item Strenge
+%	\item Dictionaries
+%	\item Filer
+%\end{itemize}
+%
+%Hvilket i princippet er mere end rigeligt til at kunne gøre "alt".
+%
+%
+%\end{frame}
+%
+%
+%
+%\begin{frame}[fragile]{Afsluttende bemærkning}
+%Det vigtigste vi ikke har lært om er hvordan man laver sine egne "klasser", sine egne typer.
+%
+%\pause
+%
+%Derudover er der masser af detaljer om de ting vi har lært som også kan udforskes.
+%
+%\pause
+%
+%Læs andres kode, læs bøger, se videoer, lav tutorials, lav et projekt og find hjælp på nettet.
+%
+%\end{frame}
 
 \end{document}
