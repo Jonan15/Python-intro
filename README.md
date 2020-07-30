@@ -13,10 +13,13 @@ Hvis ikke man ønsker at bruge/oprette en Google konto, skal man installere [Pyt
 Forsøg at få en af delene til at virke inden vi mødes første gang, men brug ikke for meget tid på det, hvis noget driller.
 
 # Naturfags sommer camp
+Slides
+* [Python slides](masterclass/python_slides.pdf)
+
 Datasets
-* [stjerner_x.csv](res/stjerner_x.csv)
-* [stjerner_y.csv](res/stjerner_y.csv)
-* [stjerner_par.csv](res/stjerner_par.csv)
+* [stjerner_x.csv](masterclass/stjerner_x.csv)
+* [stjerner_y.csv](masterclass/stjerner_y.csv)
+* [stjerner_par.csv](masterclass/stjerner_par.csv)
 
 # Praktisk information
 ## Tid og Sted
